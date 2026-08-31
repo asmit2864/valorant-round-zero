@@ -1,0 +1,70 @@
+{
+  "map": "ascent",
+  "_comment": "Nodes come from maps.generated.json (Riot callouts). extraNodes are on-site positions pros call out that Riot does not ship; their coords are interpolated within the site zone and flagged approximate. Edges are walkable connections - A* only routes along these, so paths can never cut through a wall.",
+  "extraNodes": [
+    { "name": "A Generator", "x": 0.312, "y": 0.185, "approx": true },
+    { "name": "A Dice", "x": 0.399, "y": 0.163, "approx": true },
+    { "name": "A Hell", "x": 0.268, "y": 0.108, "approx": true },
+    { "name": "B Stairs", "x": 0.222, "y": 0.646, "approx": true },
+    { "name": "B Backsite", "x": 0.232, "y": 0.784, "approx": true }
+  ],
+  "aliases": { "A Heaven": "A Rafters", "Market": "Mid Market", "Catwalk": "Mid Catwalk", "Tree": "A Tree", "Pizza": "Mid Pizza" },
+  "edges": [
+    ["Attacker Side Spawn", "A Lobby"],
+    ["Attacker Side Spawn", "B Lobby"],
+    ["Attacker Side Spawn", "Mid Courtyard"],
+    ["A Lobby", "Mid Courtyard"],
+    ["B Lobby", "Mid Courtyard"],
+
+    ["A Lobby", "A Main", { "choke": true }],
+    ["A Main", "A Wine"],
+    ["A Main", "A Dice", { "choke": true }],
+    ["A Wine", "A Site"],
+    ["A Dice", "A Site"],
+    ["A Site", "A Generator"],
+    ["A Site", "A Hell"],
+    ["A Hell", "A Rafters"],
+    ["A Rafters", "A Site"],
+    ["A Rafters", "Defender Side Spawn"],
+    ["A Generator", "A Garden"],
+    ["A Site", "A Tree"],
+    ["A Tree", "A Garden"],
+    ["A Garden", "A Window"],
+    ["A Window", "Defender Side Spawn"],
+    ["A Tree", "Mid Cubby", { "choke": true }],
+
+    ["Mid Courtyard", "Mid Bottom"],
+    ["Mid Courtyard", "Mid Link"],
+    ["Mid Bottom", "Mid Catwalk", { "choke": true }],
+    ["Mid Bottom", "Mid Market", { "choke": true }],
+    ["Mid Catwalk", "Mid Top"],
+    ["Mid Catwalk", "Mid Cubby"],
+    ["Mid Top", "Mid Cubby"],
+    ["Mid Market", "Mid Pizza", { "choke": true }],
+    ["Mid Market", "B Site"],
+    ["Mid Pizza", "Defender Side Spawn"],
+
+    ["Mid Link", "B Main"],
+    ["B Lobby", "B Main", { "choke": true }],
+    ["B Main", "B Site", { "choke": true }],
+    ["B Site", "B Backsite"],
+    ["B Site", "B Boat House"],
+    ["B Backsite", "B Stairs"],
+    ["B Stairs", "Defender Side Spawn"],
+    ["B Boat House", "B Stairs"]
+  ],
+  "zones": {
+    "aSite": ["A Site", "A Generator", "A Dice", "A Hell", "A Rafters", "A Wine"],
+    "bSite": ["B Site", "B Backsite", "B Boat House", "B Stairs"],
+    "mid": ["Mid Courtyard", "Mid Bottom", "Mid Catwalk", "Mid Top", "Mid Cubby", "Mid Market", "Mid Pizza", "Mid Link"],
+    "attackerStart": ["Attacker Side Spawn", "A Lobby", "B Lobby"],
+    "defenderStart": ["Defender Side Spawn"]
+  },
+  "plantSpots": [
+    { "site": "A", "name": "Default (Generator)", "at": "A Generator", "safeFrom": ["A Rafters", "A Hell"] },
+    { "site": "A", "name": "Dice / short", "at": "A Dice", "safeFrom": ["A Tree", "A Garden"] },
+    { "site": "B", "name": "Default (backsite)", "at": "B Backsite", "safeFrom": ["B Stairs", "Mid Market"] },
+    { "site": "B", "name": "Boat house side", "at": "B Boat House", "safeFrom": ["B Main"] }
+  ],
+  "commonAnchors": ["A Rafters", "A Generator", "Mid Catwalk", "B Site", "B Stairs", "Mid Market"]
+}

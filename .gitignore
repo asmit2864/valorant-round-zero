@@ -1,0 +1,15 @@
+node_modules/
+dist/
+*.local
+.DS_Store
+.vite/
+
+# Riot game art, downloaded and downscaled by `npm run data`.
+# Kept out of the repo so we are not redistributing their assets.
+public/assets/
+public/icon-*.png
+public/apple-touch-icon.png
+
+# Generated review artifacts
+preview-ascent.html
+snapshot-app.html

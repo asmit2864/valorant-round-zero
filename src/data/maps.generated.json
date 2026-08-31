@@ -1,0 +1,2010 @@
+[
+  {
+    "id": "abyss",
+    "uuid": "224b0a95-48b9-f703-1bd8-67aca101a61f",
+    "name": "Abyss",
+    "sites": "A/B Sites",
+    "minimap": "/assets/maps/abyss.webp",
+    "splash": "/assets/maps/abyss-splash.webp",
+    "transform": {
+      "xMultiplier": 0.000081,
+      "yMultiplier": -0.000081,
+      "xScalarToAdd": 0.5,
+      "yScalarToAdd": 0.5
+    },
+    "callouts": [
+      {
+        "name": "A Bridge",
+        "region": "A",
+        "x": 0.4696,
+        "y": 0.0383
+      },
+      {
+        "name": "A Link",
+        "region": "A",
+        "x": 0.3016,
+        "y": 0.2732
+      },
+      {
+        "name": "A Lobby",
+        "region": "A",
+        "x": 0.7754,
+        "y": 0.2367
+      },
+      {
+        "name": "A Main",
+        "region": "A",
+        "x": 0.6337,
+        "y": 0.1922
+      },
+      {
+        "name": "A Site",
+        "region": "A",
+        "x": 0.4838,
+        "y": 0.1517
+      },
+      {
+        "name": "Attacker Side Spawn",
+        "region": "Attacker Side",
+        "x": 0.901,
+        "y": 0.4231
+      },
+      {
+        "name": "A Tower",
+        "region": "A",
+        "x": 0.4899,
+        "y": 0.255
+      },
+      {
+        "name": "Mid Bend",
+        "region": "Mid",
+        "x": 0.5871,
+        "y": 0.6377
+      },
+      {
+        "name": "B Link",
+        "region": "B",
+        "x": 0.3097,
+        "y": 0.662
+      },
+      {
+        "name": "B Lobby",
+        "region": "B",
+        "x": 0.826,
+        "y": 0.7957
+      },
+      {
+        "name": "B Main",
+        "region": "B",
+        "x": 0.6235,
+        "y": 0.8605
+      },
+      {
+        "name": "B Nest",
+        "region": "B",
+        "x": 0.6742,
+        "y": 0.903
+      },
+      {
+        "name": "Mid Bottom",
+        "region": "Mid",
+        "x": 0.5466,
+        "y": 0.5324
+      },
+      {
+        "name": "B Site",
+        "region": "B",
+        "x": 0.4048,
+        "y": 0.8584
+      },
+      {
+        "name": "Mid Catwalk",
+        "region": "Mid",
+        "x": 0.5425,
+        "y": 0.4514
+      },
+      {
+        "name": "B Danger",
+        "region": "B",
+        "x": 0.5567,
+        "y": 0.9739
+      },
+      {
+        "name": "Defender Side Spawn",
+        "region": "Defender Side",
+        "x": 0.0727,
+        "y": 0.4231
+      },
+      {
+        "name": "Mid Library",
+        "region": "Mid",
+        "x": 0.4514,
+        "y": 0.5263
+      },
+      {
+        "name": "A Secret",
+        "region": "A",
+        "x": 0.1881,
+        "y": 0.1942
+      },
+      {
+        "name": "A Security",
+        "region": "A",
+        "x": 0.259,
+        "y": 0.1031
+      },
+      {
+        "name": "Mid Top",
+        "region": "Mid",
+        "x": 0.3076,
+        "y": 0.4372
+      },
+      {
+        "name": "B Tower",
+        "region": "B",
+        "x": 0.2975,
+        "y": 0.8179
+      },
+      {
+        "name": "A Vent",
+        "region": "A",
+        "x": 0.4737,
+        "y": 0.3623
+      }
+    ]
+  },
+  {
+    "id": "ascent",
+    "uuid": "7eaecc1b-4337-bbf6-6ab9-04b8f06b3319",
+    "name": "Ascent",
+    "sites": "A/B Sites",
+    "minimap": "/assets/maps/ascent.webp",
+    "splash": "/assets/maps/ascent-splash.webp",
+    "transform": {
+      "xMultiplier": 0.00007,
+      "yMultiplier": -0.00007,
+      "xScalarToAdd": 0.813895,
+      "yScalarToAdd": 0.573242
+    },
+    "callouts": [
+      {
+        "name": "A Tree",
+        "region": "A",
+        "x": 0.3982,
+        "y": 0.2946
+      },
+      {
+        "name": "A Lobby",
+        "region": "A",
+        "x": 0.6029,
+        "y": 0.259
+      },
+      {
+        "name": "A Main",
+        "region": "A",
+        "x": 0.4842,
+        "y": 0.2007
+      },
+      {
+        "name": "A Window",
+        "region": "A",
+        "x": 0.2412,
+        "y": 0.2916
+      },
+      {
+        "name": "A Site",
+        "region": "A",
+        "x": 0.3501,
+        "y": 0.1425
+      },
+      {
+        "name": "Attacker Side Spawn",
+        "region": "Attacker Side",
+        "x": 0.8174,
+        "y": 0.569
+      },
+      {
+        "name": "B Lobby",
+        "region": "B",
+        "x": 0.7166,
+        "y": 0.6776
+      },
+      {
+        "name": "B Main",
+        "region": "B",
+        "x": 0.405,
+        "y": 0.7121
+      },
+      {
+        "name": "B Boat House",
+        "region": "B",
+        "x": 0.2705,
+        "y": 0.8872
+      },
+      {
+        "name": "Mid Bottom",
+        "region": "Mid",
+        "x": 0.3973,
+        "y": 0.4947
+      },
+      {
+        "name": "B Site",
+        "region": "B",
+        "x": 0.2855,
+        "y": 0.7373
+      },
+      {
+        "name": "Mid Catwalk",
+        "region": "Mid",
+        "x": 0.525,
+        "y": 0.4111
+      },
+      {
+        "name": "Mid Cubby",
+        "region": "Mid",
+        "x": 0.4548,
+        "y": 0.3361
+      },
+      {
+        "name": "Defender Side Spawn",
+        "region": "Defender Side",
+        "x": 0.1318,
+        "y": 0.4336
+      },
+      {
+        "name": "A Garden",
+        "region": "A",
+        "x": 0.2853,
+        "y": 0.3091
+      },
+      {
+        "name": "Mid Market",
+        "region": "Mid",
+        "x": 0.2985,
+        "y": 0.497
+      },
+      {
+        "name": "Mid Courtyard",
+        "region": "Mid",
+        "x": 0.4928,
+        "y": 0.4877
+      },
+      {
+        "name": "Mid Link",
+        "region": "Mid",
+        "x": 0.5143,
+        "y": 0.6175
+      },
+      {
+        "name": "Mid Pizza",
+        "region": "Mid",
+        "x": 0.3055,
+        "y": 0.4471
+      },
+      {
+        "name": "A Rafters",
+        "region": "A",
+        "x": 0.2392,
+        "y": 0.1441
+      },
+      {
+        "name": "Mid Top",
+        "region": "Mid",
+        "x": 0.6648,
+        "y": 0.3805
+      },
+      {
+        "name": "A Wine",
+        "region": "A",
+        "x": 0.4856,
+        "y": 0.0581
+      }
+    ]
+  },
+  {
+    "id": "bind",
+    "uuid": "2c9d57ec-4431-9c5e-2939-8f9ef6dd5cba",
+    "name": "Bind",
+    "sites": "A/B Sites",
+    "minimap": "/assets/maps/bind.webp",
+    "splash": "/assets/maps/bind-splash.webp",
+    "transform": {
+      "xMultiplier": 0.000059,
+      "yMultiplier": -0.000059,
+      "xScalarToAdd": 0.576941,
+      "yScalarToAdd": 0.967566
+    },
+    "callouts": [
+      {
+        "name": "A Exit",
+        "region": "A",
+        "x": 0.9235,
+        "y": 0.5221
+      },
+      {
+        "name": "A Link",
+        "region": "A",
+        "x": 0.5175,
+        "y": 0.592
+      },
+      {
+        "name": "A Lobby",
+        "region": "A",
+        "x": 0.7633,
+        "y": 0.6069
+      },
+      {
+        "name": "A Short",
+        "region": "A",
+        "x": 0.6244,
+        "y": 0.4965
+      },
+      {
+        "name": "A Site",
+        "region": "A",
+        "x": 0.7341,
+        "y": 0.3334
+      },
+      {
+        "name": "A Teleporter",
+        "region": "A",
+        "x": 0.6058,
+        "y": 0.4111
+      },
+      {
+        "name": "Attacker Side Spawn",
+        "region": "Attacker Side",
+        "x": 0.5815,
+        "y": 0.958
+      },
+      {
+        "name": "B Exit",
+        "region": "B",
+        "x": 0.4729,
+        "y": 0.4412
+      },
+      {
+        "name": "B Hall",
+        "region": "B",
+        "x": 0.2854,
+        "y": 0.2016
+      },
+      {
+        "name": "B Link",
+        "region": "B",
+        "x": 0.4223,
+        "y": 0.5922
+      },
+      {
+        "name": "B Fountain",
+        "region": "B",
+        "x": 0.2589,
+        "y": 0.6291
+      },
+      {
+        "name": "B Long",
+        "region": "B",
+        "x": 0.1927,
+        "y": 0.5152
+      },
+      {
+        "name": "B Short",
+        "region": "B",
+        "x": 0.3966,
+        "y": 0.5295
+      },
+      {
+        "name": "B Site",
+        "region": "B",
+        "x": 0.2919,
+        "y": 0.3122
+      },
+      {
+        "name": "B Teleporter",
+        "region": "B",
+        "x": 0.1507,
+        "y": 0.4349
+      },
+      {
+        "name": "B Window",
+        "region": "B",
+        "x": 0.3227,
+        "y": 0.4468
+      },
+      {
+        "name": "A Bath",
+        "region": "A",
+        "x": 0.8395,
+        "y": 0.4303
+      },
+      {
+        "name": "Attacker Side Cave",
+        "region": "Attacker Side",
+        "x": 0.5921,
+        "y": 0.7363
+      },
+      {
+        "name": "A Cubby",
+        "region": "A",
+        "x": 0.5873,
+        "y": 0.4599
+      },
+      {
+        "name": "Defender Side Spawn",
+        "region": "Defender Side",
+        "x": 0.5169,
+        "y": 0.1037
+      },
+      {
+        "name": "B Elbow",
+        "region": "B",
+        "x": 0.1583,
+        "y": 0.306
+      },
+      {
+        "name": "B Garden",
+        "region": "B",
+        "x": 0.2467,
+        "y": 0.4281
+      },
+      {
+        "name": "A Lamps",
+        "region": "A",
+        "x": 0.5817,
+        "y": 0.3392
+      },
+      {
+        "name": "A Tower",
+        "region": "A",
+        "x": 0.7278,
+        "y": 0.2081
+      }
+    ]
+  },
+  {
+    "id": "breeze",
+    "uuid": "2fb9a4fd-47b8-4e7d-a969-74b4046ebd53",
+    "name": "Breeze",
+    "sites": "A/B Sites",
+    "minimap": "/assets/maps/breeze.webp",
+    "splash": "/assets/maps/breeze-splash.webp",
+    "transform": {
+      "xMultiplier": 0.00007,
+      "yMultiplier": -0.00007,
+      "xScalarToAdd": 0.465123,
+      "yScalarToAdd": 0.833078
+    },
+    "callouts": [
+      {
+        "name": "Mid Hall",
+        "region": "Mid",
+        "x": 0.6395,
+        "y": 0.5351
+      },
+      {
+        "name": "A Bridge",
+        "region": "A",
+        "x": 0.7119,
+        "y": 0.2451
+      },
+      {
+        "name": "Defender Side Spawn",
+        "region": "Defender Side",
+        "x": 0.7119,
+        "y": 0.2101
+      },
+      {
+        "name": "Defender Side Arches",
+        "region": "Defender Side",
+        "x": 0.3741,
+        "y": 0.1751
+      },
+      {
+        "name": "Mid Wood Doors",
+        "region": "Mid",
+        "x": 0.6436,
+        "y": 0.4953
+      },
+      {
+        "name": "Mid Pillar",
+        "region": "Mid",
+        "x": 0.4984,
+        "y": 0.5408
+      },
+      {
+        "name": "Mid Top",
+        "region": "Mid",
+        "x": 0.5019,
+        "y": 0.4008
+      },
+      {
+        "name": "Mid Nest",
+        "region": "Mid",
+        "x": 0.4844,
+        "y": 0.2276
+      },
+      {
+        "name": "B Window",
+        "region": "B",
+        "x": 0.1729,
+        "y": 0.6773
+      },
+      {
+        "name": "B Main",
+        "region": "B",
+        "x": 0.1536,
+        "y": 0.5846
+      },
+      {
+        "name": "B Elbow",
+        "region": "B",
+        "x": 0.2621,
+        "y": 0.5058
+      },
+      {
+        "name": "B Site",
+        "region": "B",
+        "x": 0.0696,
+        "y": 0.3816
+      },
+      {
+        "name": "B Tunnel",
+        "region": "B",
+        "x": 0.3636,
+        "y": 0.3816
+      },
+      {
+        "name": "A Ramp",
+        "region": "A",
+        "x": 0.6559,
+        "y": 0.3221
+      },
+      {
+        "name": "B Back",
+        "region": "B",
+        "x": 0.0679,
+        "y": 0.3046
+      },
+      {
+        "name": "B Wall",
+        "region": "B",
+        "x": 0.2551,
+        "y": 0.2346
+      },
+      {
+        "name": "Mid Cannon",
+        "region": "Mid",
+        "x": 0.3356,
+        "y": 0.6301
+      },
+      {
+        "name": "Mid Bottom",
+        "region": "Mid",
+        "x": 0.4984,
+        "y": 0.7228
+      },
+      {
+        "name": "A Lobby",
+        "region": "A",
+        "x": 0.7031,
+        "y": 0.9206
+      },
+      {
+        "name": "A Shop",
+        "region": "A",
+        "x": 0.7626,
+        "y": 0.6826
+      },
+      {
+        "name": "A Site",
+        "region": "A",
+        "x": 0.9079,
+        "y": 0.4953
+      },
+      {
+        "name": "A Pyramids",
+        "region": "A",
+        "x": 0.8466,
+        "y": 0.4691
+      },
+      {
+        "name": "Attacker Side Spawn",
+        "region": "Attacker Side",
+        "x": 0.4336,
+        "y": 0.8733
+      }
+    ]
+  },
+  {
+    "id": "corrode",
+    "uuid": "1c18ab1f-420d-0d8b-71d0-77ad3c439115",
+    "name": "Corrode",
+    "sites": "A/B Sites",
+    "minimap": "/assets/maps/corrode.webp",
+    "splash": "/assets/maps/corrode-splash.webp",
+    "transform": {
+      "xMultiplier": 0.00007,
+      "yMultiplier": -0.00007,
+      "xScalarToAdd": 0.526158,
+      "yScalarToAdd": 0.5
+    },
+    "callouts": [
+      {
+        "name": "A Crane",
+        "region": "A",
+        "x": 0.2462,
+        "y": 0.1879
+      },
+      {
+        "name": "A Elbow",
+        "region": "A",
+        "x": 0.3809,
+        "y": 0.1092
+      },
+      {
+        "name": "A Link",
+        "region": "A",
+        "x": 0.4527,
+        "y": 0.3752
+      },
+      {
+        "name": "A Lobby",
+        "region": "A",
+        "x": 0.7082,
+        "y": 0.1967
+      },
+      {
+        "name": "A Main",
+        "region": "A",
+        "x": 0.6119,
+        "y": 0.0847
+      },
+      {
+        "name": "A Pocket",
+        "region": "A",
+        "x": 0.4702,
+        "y": 0.1092
+      },
+      {
+        "name": "A Site",
+        "region": "A",
+        "x": 0.3984,
+        "y": 0.2579
+      },
+      {
+        "name": "Attacker Side Spawn",
+        "region": "Attacker Side",
+        "x": 0.9234,
+        "y": 0.5018
+      },
+      {
+        "name": "A Yard",
+        "region": "A",
+        "x": 0.4702,
+        "y": 0.1967
+      },
+      {
+        "name": "B Arch",
+        "region": "B",
+        "x": 0.2182,
+        "y": 0.7252
+      },
+      {
+        "name": "B Elbow",
+        "region": "B",
+        "x": 0.3214,
+        "y": 0.8914
+      },
+      {
+        "name": "B Link",
+        "region": "B",
+        "x": 0.3984,
+        "y": 0.5904
+      },
+      {
+        "name": "B Lobby",
+        "region": "B",
+        "x": 0.7204,
+        "y": 0.6167
+      },
+      {
+        "name": "B Main",
+        "region": "B",
+        "x": 0.5787,
+        "y": 0.6902
+      },
+      {
+        "name": "Mid Bottom",
+        "region": "Mid",
+        "x": 0.5384,
+        "y": 0.4907
+      },
+      {
+        "name": "B Site",
+        "region": "B",
+        "x": 0.4439,
+        "y": 0.6902
+      },
+      {
+        "name": "B Tower",
+        "region": "B",
+        "x": 0.3214,
+        "y": 0.7462
+      },
+      {
+        "name": "Defender Side Spawn",
+        "region": "Defender Side",
+        "x": 0.1237,
+        "y": 0.4994
+      },
+      {
+        "name": "Mid Stairs",
+        "region": "Mid",
+        "x": 0.4229,
+        "y": 0.4907
+      },
+      {
+        "name": "Mid Window",
+        "region": "Mid",
+        "x": 0.3092,
+        "y": 0.4907
+      },
+      {
+        "name": "Mid Top",
+        "region": "Mid",
+        "x": 0.3984,
+        "y": 0.4907
+      }
+    ]
+  },
+  {
+    "id": "fracture",
+    "uuid": "b529448b-4d60-346e-e89e-00a4c527a405",
+    "name": "Fracture",
+    "sites": "A/B Sites",
+    "minimap": "/assets/maps/fracture.webp",
+    "splash": "/assets/maps/fracture-splash.webp",
+    "transform": {
+      "xMultiplier": 0.000078,
+      "yMultiplier": -0.000078,
+      "xScalarToAdd": 0.556952,
+      "yScalarToAdd": 1.155886
+    },
+    "callouts": [
+      {
+        "name": "Attacker Side Bridge",
+        "region": "Attacker Side",
+        "x": 0.498,
+        "y": 0.126
+      },
+      {
+        "name": "B Bench",
+        "region": "B",
+        "x": 0.331,
+        "y": 0.261
+      },
+      {
+        "name": "B Arcade",
+        "region": "B",
+        "x": 0.231,
+        "y": 0.3618
+      },
+      {
+        "name": "B Tower",
+        "region": "B",
+        "x": 0.1201,
+        "y": 0.4418
+      },
+      {
+        "name": "B Site",
+        "region": "B",
+        "x": 0.0935,
+        "y": 0.518
+      },
+      {
+        "name": "B Generator",
+        "region": "B",
+        "x": 0.2933,
+        "y": 0.5036
+      },
+      {
+        "name": "B Link",
+        "region": "B",
+        "x": 0.3432,
+        "y": 0.4384
+      },
+      {
+        "name": "B Canteen",
+        "region": "B",
+        "x": 0.3122,
+        "y": 0.6012
+      },
+      {
+        "name": "A Link",
+        "region": "A",
+        "x": 0.6585,
+        "y": 0.4868
+      },
+      {
+        "name": "Defender Side Spawn",
+        "region": "Defender Side",
+        "x": 0.5041,
+        "y": 0.4417
+      },
+      {
+        "name": "B Main",
+        "region": "B",
+        "x": 0.1402,
+        "y": 0.6905
+      },
+      {
+        "name": "B Tree",
+        "region": "B",
+        "x": 0.2365,
+        "y": 0.7686
+      },
+      {
+        "name": "B Tunnel",
+        "region": "B",
+        "x": 0.2404,
+        "y": 0.5785
+      },
+      {
+        "name": "A Hall",
+        "region": "A",
+        "x": 0.7174,
+        "y": 0.7609
+      },
+      {
+        "name": "A Door",
+        "region": "A",
+        "x": 0.7083,
+        "y": 0.7029
+      },
+      {
+        "name": "A Rope",
+        "region": "A",
+        "x": 0.6391,
+        "y": 0.6381
+      },
+      {
+        "name": "A Main",
+        "region": "A",
+        "x": 0.8261,
+        "y": 0.6973
+      },
+      {
+        "name": "A Site",
+        "region": "A",
+        "x": 0.8201,
+        "y": 0.5221
+      },
+      {
+        "name": "A Drop",
+        "region": "A",
+        "x": 0.7774,
+        "y": 0.43
+      },
+      {
+        "name": "A Dish",
+        "region": "A",
+        "x": 0.6655,
+        "y": 0.2747
+      },
+      {
+        "name": "A Gate",
+        "region": "A",
+        "x": 0.679,
+        "y": 0.1448
+      },
+      {
+        "name": "Attacker Side Spawn",
+        "region": "Attacker Side",
+        "x": 0.483,
+        "y": 0.8169
+      }
+    ]
+  },
+  {
+    "id": "haven",
+    "uuid": "2bee0dc9-4ffe-519b-1cbd-7fbe763a6047",
+    "name": "Haven",
+    "sites": "A/B/C Sites",
+    "minimap": "/assets/maps/haven.webp",
+    "splash": "/assets/maps/haven-splash.webp",
+    "transform": {
+      "xMultiplier": 0.000075,
+      "yMultiplier": -0.000075,
+      "xScalarToAdd": 1.09345,
+      "yScalarToAdd": 0.642728
+    },
+    "callouts": [
+      {
+        "name": "A Garden",
+        "region": "A",
+        "x": 0.7422,
+        "y": 0.4102
+      },
+      {
+        "name": "A Link",
+        "region": "A",
+        "x": 0.2898,
+        "y": 0.3244
+      },
+      {
+        "name": "A Lobby",
+        "region": "A",
+        "x": 0.6239,
+        "y": 0.3848
+      },
+      {
+        "name": "A Long",
+        "region": "A",
+        "x": 0.5759,
+        "y": 0.177
+      },
+      {
+        "name": "A Sewer",
+        "region": "A",
+        "x": 0.4998,
+        "y": 0.3838
+      },
+      {
+        "name": "A Site",
+        "region": "A",
+        "x": 0.4015,
+        "y": 0.1695
+      },
+      {
+        "name": "Attacker Side Spawn",
+        "region": "Attacker Side",
+        "x": 0.8952,
+        "y": 0.5121
+      },
+      {
+        "name": "B Back",
+        "region": "B",
+        "x": 0.2936,
+        "y": 0.4953
+      },
+      {
+        "name": "B Site",
+        "region": "B",
+        "x": 0.4011,
+        "y": 0.5014
+      },
+      {
+        "name": "C Link",
+        "region": "C",
+        "x": 0.3431,
+        "y": 0.6493
+      },
+      {
+        "name": "C Lobby",
+        "region": "C",
+        "x": 0.6644,
+        "y": 0.7659
+      },
+      {
+        "name": "C Long",
+        "region": "C",
+        "x": 0.6441,
+        "y": 0.8945
+      },
+      {
+        "name": "C Garage",
+        "region": "C",
+        "x": 0.4935,
+        "y": 0.6292
+      },
+      {
+        "name": "C Window",
+        "region": "C",
+        "x": 0.419,
+        "y": 0.6435
+      },
+      {
+        "name": "C Site",
+        "region": "C",
+        "x": 0.4177,
+        "y": 0.8211
+      },
+      {
+        "name": "C Cubby",
+        "region": "C",
+        "x": 0.6013,
+        "y": 0.8017
+      },
+      {
+        "name": "Defender Side Spawn",
+        "region": "Defender Side",
+        "x": 0.1398,
+        "y": 0.4218
+      },
+      {
+        "name": "Mid Doors",
+        "region": "Mid",
+        "x": 0.6237,
+        "y": 0.6314
+      },
+      {
+        "name": "Mid Courtyard",
+        "region": "Mid",
+        "x": 0.59,
+        "y": 0.5061
+      },
+      {
+        "name": "Mid Window",
+        "region": "Mid",
+        "x": 0.6759,
+        "y": 0.4965
+      },
+      {
+        "name": "A Tower",
+        "region": "A",
+        "x": 0.308,
+        "y": 0.1386
+      }
+    ]
+  },
+  {
+    "id": "icebox",
+    "uuid": "e2ad5c54-4114-a870-9641-8ea21279579a",
+    "name": "Icebox",
+    "sites": "A/B Sites",
+    "minimap": "/assets/maps/icebox.webp",
+    "splash": "/assets/maps/icebox-splash.webp",
+    "transform": {
+      "xMultiplier": 0.000072,
+      "yMultiplier": -0.000072,
+      "xScalarToAdd": 0.460214,
+      "yScalarToAdd": 0.304687
+    },
+    "callouts": [
+      {
+        "name": "B Garage",
+        "region": "B",
+        "x": 0.3576,
+        "y": 0.3947
+      },
+      {
+        "name": "A Belt",
+        "region": "A",
+        "x": 0.399,
+        "y": 0.8231
+      },
+      {
+        "name": "A Nest",
+        "region": "A",
+        "x": 0.525,
+        "y": 0.7835
+      },
+      {
+        "name": "A Pipes",
+        "region": "A",
+        "x": 0.4926,
+        "y": 0.7475
+      },
+      {
+        "name": "A Rafters",
+        "region": "A",
+        "x": 0.7662,
+        "y": 0.7691
+      },
+      {
+        "name": "A Screen",
+        "region": "A",
+        "x": 0.6996,
+        "y": 0.6719
+      },
+      {
+        "name": "A Site",
+        "region": "A",
+        "x": 0.6906,
+        "y": 0.7655
+      },
+      {
+        "name": "Attacker Side Spawn",
+        "region": "Attacker Side",
+        "x": 0.1398,
+        "y": 0.5873
+      },
+      {
+        "name": "B Yellow",
+        "region": "B",
+        "x": 0.4584,
+        "y": 0.1571
+      },
+      {
+        "name": "B Back",
+        "region": "B",
+        "x": 0.7676,
+        "y": 0.2866
+      },
+      {
+        "name": "B Cubby",
+        "region": "B",
+        "x": 0.39,
+        "y": 0.2291
+      },
+      {
+        "name": "B Green",
+        "region": "B",
+        "x": 0.4098,
+        "y": 0.3371
+      },
+      {
+        "name": "B Hall",
+        "region": "B",
+        "x": 0.6798,
+        "y": 0.2831
+      },
+      {
+        "name": "B Hut",
+        "region": "B",
+        "x": 0.777,
+        "y": 0.4073
+      },
+      {
+        "name": "B Kitchen",
+        "region": "B",
+        "x": 0.7053,
+        "y": 0.4646
+      },
+      {
+        "name": "B Orange",
+        "region": "B",
+        "x": 0.5826,
+        "y": 0.3502
+      },
+      {
+        "name": "B Site",
+        "region": "B",
+        "x": 0.6456,
+        "y": 0.1805
+      },
+      {
+        "name": "B Snowman",
+        "region": "B",
+        "x": 0.7454,
+        "y": 0.1427
+      },
+      {
+        "name": "B Snow Pile",
+        "region": "B",
+        "x": 0.6402,
+        "y": 0.4325
+      },
+      {
+        "name": "B Tube",
+        "region": "B",
+        "x": 0.552,
+        "y": 0.4703
+      },
+      {
+        "name": "Defender Side Spawn",
+        "region": "Defender Side",
+        "x": 0.9696,
+        "y": 0.5747
+      },
+      {
+        "name": "Mid Blue",
+        "region": "Mid",
+        "x": 0.5304,
+        "y": 0.5081
+      },
+      {
+        "name": "Mid Boiler",
+        "region": "Mid",
+        "x": 0.6708,
+        "y": 0.5477
+      },
+      {
+        "name": "Mid Pallet",
+        "region": "Mid",
+        "x": 0.588,
+        "y": 0.6251
+      },
+      {
+        "name": "B Fence",
+        "region": "B",
+        "x": 0.7191,
+        "y": 0.2786
+      }
+    ]
+  },
+  {
+    "id": "lotus",
+    "uuid": "2fe4ed3a-450a-948b-6d6b-e89a78e680a9",
+    "name": "Lotus",
+    "sites": "A/B/C Sites",
+    "minimap": "/assets/maps/lotus.webp",
+    "splash": "/assets/maps/lotus-splash.webp",
+    "transform": {
+      "xMultiplier": 0.000072,
+      "yMultiplier": -0.000072,
+      "xScalarToAdd": 0.454789,
+      "yScalarToAdd": 0.917752
+    },
+    "callouts": [
+      {
+        "name": "A Top",
+        "region": "A",
+        "x": 0.8181,
+        "y": 0.251
+      },
+      {
+        "name": "A Drop",
+        "region": "A",
+        "x": 0.8935,
+        "y": 0.2326
+      },
+      {
+        "name": "A Site",
+        "region": "A",
+        "x": 0.8549,
+        "y": 0.3608
+      },
+      {
+        "name": "A Hut",
+        "region": "A",
+        "x": 0.8549,
+        "y": 0.3477
+      },
+      {
+        "name": "A Tree",
+        "region": "A",
+        "x": 0.8549,
+        "y": 0.475
+      },
+      {
+        "name": "A Door",
+        "region": "A",
+        "x": 0.8295,
+        "y": 0.5139
+      },
+      {
+        "name": "A Main",
+        "region": "A",
+        "x": 0.7543,
+        "y": 0.537
+      },
+      {
+        "name": "A Rubble",
+        "region": "A",
+        "x": 0.8089,
+        "y": 0.6009
+      },
+      {
+        "name": "A Root",
+        "region": "A",
+        "x": 0.692,
+        "y": 0.6009
+      },
+      {
+        "name": "A Lobby",
+        "region": "A",
+        "x": 0.6655,
+        "y": 0.7244
+      },
+      {
+        "name": "C Lobby",
+        "region": "C",
+        "x": 0.3413,
+        "y": 0.8167
+      },
+      {
+        "name": "B Pillars",
+        "region": "B",
+        "x": 0.5029,
+        "y": 0.661
+      },
+      {
+        "name": "B Main",
+        "region": "B",
+        "x": 0.4513,
+        "y": 0.5666
+      },
+      {
+        "name": "C Door",
+        "region": "C",
+        "x": 0.3286,
+        "y": 0.5708
+      },
+      {
+        "name": "B Site",
+        "region": "B",
+        "x": 0.5029,
+        "y": 0.4593
+      },
+      {
+        "name": "A Link",
+        "region": "A",
+        "x": 0.6051,
+        "y": 0.485
+      },
+      {
+        "name": "B Upper",
+        "region": "B",
+        "x": 0.564,
+        "y": 0.3646
+      },
+      {
+        "name": "C Waterfall",
+        "region": "C",
+        "x": 0.3112,
+        "y": 0.4339
+      },
+      {
+        "name": "C Link",
+        "region": "C",
+        "x": 0.3556,
+        "y": 0.3775
+      },
+      {
+        "name": "A Stairs",
+        "region": "A",
+        "x": 0.7328,
+        "y": 0.3232
+      },
+      {
+        "name": "C Mound",
+        "region": "C",
+        "x": 0.3413,
+        "y": 0.6396
+      },
+      {
+        "name": "C Main",
+        "region": "C",
+        "x": 0.2281,
+        "y": 0.5353
+      },
+      {
+        "name": "C Bend",
+        "region": "C",
+        "x": 0.0745,
+        "y": 0.5104
+      },
+      {
+        "name": "C Site",
+        "region": "C",
+        "x": 0.1476,
+        "y": 0.437
+      },
+      {
+        "name": "C Hall",
+        "region": "C",
+        "x": 0.1476,
+        "y": 0.3488
+      },
+      {
+        "name": "C Gravel",
+        "region": "C",
+        "x": 0.3286,
+        "y": 0.2743
+      },
+      {
+        "name": "Defender Side Spawn",
+        "region": "Defender Side",
+        "x": 0.577,
+        "y": 0.2203
+      },
+      {
+        "name": "Attacker Side Spawn",
+        "region": "Attacker Side",
+        "x": 0.5108,
+        "y": 0.8169
+      }
+    ]
+  },
+  {
+    "id": "pearl",
+    "uuid": "fd267378-4d1d-484f-ff52-77821ed10dc2",
+    "name": "Pearl",
+    "sites": "A/B Sites",
+    "minimap": "/assets/maps/pearl.webp",
+    "splash": "/assets/maps/pearl-splash.webp",
+    "transform": {
+      "xMultiplier": 0.000078,
+      "yMultiplier": -0.000078,
+      "xScalarToAdd": 0.480469,
+      "yScalarToAdd": 0.916016
+    },
+    "callouts": [
+      {
+        "name": "B Hall",
+        "region": "B",
+        "x": 0.094,
+        "y": 0.3314
+      },
+      {
+        "name": "Mid Doors",
+        "region": "Mid",
+        "x": 0.5271,
+        "y": 0.5493
+      },
+      {
+        "name": "Mid Connector",
+        "region": "Mid",
+        "x": 0.6209,
+        "y": 0.4443
+      },
+      {
+        "name": "Defender Side Water",
+        "region": "Defender Side",
+        "x": 0.6209,
+        "y": 0.307
+      },
+      {
+        "name": "Defender Side Spawn",
+        "region": "Defender Side",
+        "x": 0.51,
+        "y": 0.0508
+      },
+      {
+        "name": "A Flowers",
+        "region": "A",
+        "x": 0.676,
+        "y": 0.1934
+      },
+      {
+        "name": "A Secret",
+        "region": "A",
+        "x": 0.7793,
+        "y": 0.1003
+      },
+      {
+        "name": "A Dugout",
+        "region": "A",
+        "x": 0.9371,
+        "y": 0.3185
+      },
+      {
+        "name": "A Site",
+        "region": "A",
+        "x": 0.9149,
+        "y": 0.4001
+      },
+      {
+        "name": "Defender Side Records",
+        "region": "Defender Side",
+        "x": 0.3658,
+        "y": 0.2161
+      },
+      {
+        "name": "Mid Top",
+        "region": "Mid",
+        "x": 0.537,
+        "y": 0.7542
+      },
+      {
+        "name": "B Tunnel",
+        "region": "B",
+        "x": 0.3124,
+        "y": 0.2161
+      },
+      {
+        "name": "B Tower",
+        "region": "B",
+        "x": 0.2581,
+        "y": 0.2504
+      },
+      {
+        "name": "A Main",
+        "region": "A",
+        "x": 0.7788,
+        "y": 0.4193
+      },
+      {
+        "name": "A Restaurant",
+        "region": "A",
+        "x": 0.6999,
+        "y": 0.5704
+      },
+      {
+        "name": "B Link",
+        "region": "B",
+        "x": 0.4343,
+        "y": 0.5648
+      },
+      {
+        "name": "A Art",
+        "region": "A",
+        "x": 0.7462,
+        "y": 0.5602
+      },
+      {
+        "name": "A Link",
+        "region": "A",
+        "x": 0.7755,
+        "y": 0.4437
+      },
+      {
+        "name": "Mid Plaza",
+        "region": "Mid",
+        "x": 0.4551,
+        "y": 0.7015
+      },
+      {
+        "name": "Mid Shops",
+        "region": "Mid",
+        "x": 0.3674,
+        "y": 0.8536
+      },
+      {
+        "name": "B Club",
+        "region": "B",
+        "x": 0.3674,
+        "y": 0.8536
+      },
+      {
+        "name": "B Ramp",
+        "region": "B",
+        "x": 0.1841,
+        "y": 0.7795
+      },
+      {
+        "name": "B Main",
+        "region": "B",
+        "x": 0.1392,
+        "y": 0.6001
+      },
+      {
+        "name": "B Site",
+        "region": "B",
+        "x": 0.2582,
+        "y": 0.4636
+      },
+      {
+        "name": "B Screen",
+        "region": "B",
+        "x": 0.0904,
+        "y": 0.4277
+      },
+      {
+        "name": "Attacker Side Spawn",
+        "region": "Attacker Side",
+        "x": 0.4337,
+        "y": 0.9589
+      }
+    ]
+  },
+  {
+    "id": "split",
+    "uuid": "d960549e-485c-e861-8d71-aa9d1aed12a2",
+    "name": "Split",
+    "sites": "A/B Sites",
+    "minimap": "/assets/maps/split.webp",
+    "splash": "/assets/maps/split-splash.webp",
+    "transform": {
+      "xMultiplier": 0.000078,
+      "yMultiplier": -0.000078,
+      "xScalarToAdd": 0.842188,
+      "yScalarToAdd": 0.697578
+    },
+    "callouts": [
+      {
+        "name": "A Back",
+        "region": "A",
+        "x": 0.2293,
+        "y": 0.1247
+      },
+      {
+        "name": "A Lobby",
+        "region": "A",
+        "x": 0.6505,
+        "y": 0.1661
+      },
+      {
+        "name": "A Main",
+        "region": "A",
+        "x": 0.4917,
+        "y": 0.2077
+      },
+      {
+        "name": "A Rafters",
+        "region": "A",
+        "x": 0.354,
+        "y": 0.2737
+      },
+      {
+        "name": "A Ramps",
+        "region": "A",
+        "x": 0.4717,
+        "y": 0.3598
+      },
+      {
+        "name": "A Screens",
+        "region": "A",
+        "x": 0.1504,
+        "y": 0.257
+      },
+      {
+        "name": "A Sewer",
+        "region": "A",
+        "x": 0.6575,
+        "y": 0.3183
+      },
+      {
+        "name": "A Site",
+        "region": "A",
+        "x": 0.3148,
+        "y": 0.1837
+      },
+      {
+        "name": "A Tower",
+        "region": "A",
+        "x": 0.3158,
+        "y": 0.3359
+      },
+      {
+        "name": "Attacker Side Spawn",
+        "region": "Attacker Side",
+        "x": 0.8468,
+        "y": 0.5492
+      },
+      {
+        "name": "B Alley",
+        "region": "B",
+        "x": 0.213,
+        "y": 0.7879
+      },
+      {
+        "name": "B Back",
+        "region": "B",
+        "x": 0.2636,
+        "y": 0.9399
+      },
+      {
+        "name": "B Link",
+        "region": "B",
+        "x": 0.6573,
+        "y": 0.6997
+      },
+      {
+        "name": "B Garage",
+        "region": "B",
+        "x": 0.542,
+        "y": 0.8685
+      },
+      {
+        "name": "B Rafters",
+        "region": "B",
+        "x": 0.3687,
+        "y": 0.7473
+      },
+      {
+        "name": "B Site",
+        "region": "B",
+        "x": 0.3535,
+        "y": 0.8666
+      },
+      {
+        "name": "B Stairs",
+        "region": "B",
+        "x": 0.3148,
+        "y": 0.6148
+      },
+      {
+        "name": "B Tower",
+        "region": "B",
+        "x": 0.4296,
+        "y": 0.6844
+      },
+      {
+        "name": "B Lobby",
+        "region": "B",
+        "x": 0.6875,
+        "y": 0.7968
+      },
+      {
+        "name": "Defender Side Spawn",
+        "region": "Defender Side",
+        "x": 0.1429,
+        "y": 0.5305
+      },
+      {
+        "name": "Mid Bottom",
+        "region": "Mid",
+        "x": 0.616,
+        "y": 0.5476
+      },
+      {
+        "name": "Mid Mail",
+        "region": "Mid",
+        "x": 0.4671,
+        "y": 0.6075
+      },
+      {
+        "name": "Mid Top",
+        "region": "Mid",
+        "x": 0.4836,
+        "y": 0.5399
+      },
+      {
+        "name": "Mid Vent",
+        "region": "Mid",
+        "x": 0.4258,
+        "y": 0.4515
+      }
+    ]
+  },
+  {
+    "id": "summit",
+    "uuid": "756da597-416b-c0f2-f47b-afbdf28670bc",
+    "name": "Summit",
+    "sites": "A/B Sites",
+    "minimap": "/assets/maps/summit.webp",
+    "splash": "/assets/maps/summit-splash.webp",
+    "transform": {
+      "xMultiplier": 0.000075,
+      "yMultiplier": -0.000075,
+      "xScalarToAdd": 0.047401,
+      "yScalarToAdd": 0.978891
+    },
+    "callouts": [
+      {
+        "name": "Mid Bottom",
+        "region": "Mid",
+        "x": 0.4843,
+        "y": 0.4164
+      },
+      {
+        "name": "Mid Top",
+        "region": "Mid",
+        "x": 0.5368,
+        "y": 0.677
+      },
+      {
+        "name": "A Lobby",
+        "region": "A",
+        "x": 0.6943,
+        "y": 0.7408
+      },
+      {
+        "name": "A Main",
+        "region": "A",
+        "x": 0.6943,
+        "y": 0.5664
+      },
+      {
+        "name": "A Garden",
+        "region": "A",
+        "x": 0.7918,
+        "y": 0.4033
+      },
+      {
+        "name": "A Site",
+        "region": "A",
+        "x": 0.9174,
+        "y": 0.4033
+      },
+      {
+        "name": "A Art",
+        "region": "A",
+        "x": 0.7918,
+        "y": 0.2645
+      },
+      {
+        "name": "A Cave",
+        "region": "A",
+        "x": 0.9568,
+        "y": 0.2645
+      },
+      {
+        "name": "A Hall",
+        "region": "A",
+        "x": 0.6924,
+        "y": 0.2645
+      },
+      {
+        "name": "A Link",
+        "region": "A",
+        "x": 0.6512,
+        "y": 0.3601
+      },
+      {
+        "name": "B Lobby",
+        "region": "B",
+        "x": 0.2893,
+        "y": 0.5945
+      },
+      {
+        "name": "Defender Side Spawn",
+        "region": "Defender Side",
+        "x": 0.5105,
+        "y": 0.0733
+      },
+      {
+        "name": "Mid Window",
+        "region": "Mid",
+        "x": 0.4843,
+        "y": 0.3264
+      },
+      {
+        "name": "B Gym",
+        "region": "B",
+        "x": 0.2799,
+        "y": 0.1895
+      },
+      {
+        "name": "B Trophy",
+        "region": "B",
+        "x": 0.323,
+        "y": 0.2983
+      },
+      {
+        "name": "B Tower",
+        "region": "B",
+        "x": 0.1562,
+        "y": 0.2158
+      },
+      {
+        "name": "B Drop",
+        "region": "B",
+        "x": 0.053,
+        "y": 0.2401
+      },
+      {
+        "name": "B Site",
+        "region": "B",
+        "x": 0.1505,
+        "y": 0.3376
+      },
+      {
+        "name": "B Link",
+        "region": "B",
+        "x": 0.3305,
+        "y": 0.4164
+      },
+      {
+        "name": "Mid Fountain",
+        "region": "Mid",
+        "x": 0.5105,
+        "y": 0.5533
+      },
+      {
+        "name": "Mid Bend",
+        "region": "Mid",
+        "x": 0.6362,
+        "y": 0.4933
+      },
+      {
+        "name": "Mid Tiles",
+        "region": "Mid",
+        "x": 0.3649,
+        "y": 0.6068
+      },
+      {
+        "name": "B Main",
+        "region": "B",
+        "x": 0.1862,
+        "y": 0.4914
+      },
+      {
+        "name": "Attacker Side Spawn",
+        "region": "Attacker Side",
+        "x": 0.0399,
+        "y": 0.8964
+      }
+    ]
+  },
+  {
+    "id": "sunset",
+    "uuid": "92584fbe-486a-b1b2-9faa-39b0f486b498",
+    "name": "Sunset",
+    "sites": "A/B Sites",
+    "minimap": "/assets/maps/sunset.webp",
+    "splash": "/assets/maps/sunset-splash.webp",
+    "transform": {
+      "xMultiplier": 0.000078,
+      "yMultiplier": -0.000078,
+      "xScalarToAdd": 0.5,
+      "yScalarToAdd": 0.515625
+    },
+    "callouts": [
+      {
+        "name": "B Boba",
+        "region": "B",
+        "x": 0.1256,
+        "y": 0.344
+      },
+      {
+        "name": "Mid Tiles",
+        "region": "Mid",
+        "x": 0.5312,
+        "y": 0.656
+      },
+      {
+        "name": "B Market",
+        "region": "B",
+        "x": 0.2348,
+        "y": 0.5312
+      },
+      {
+        "name": "B Site",
+        "region": "B",
+        "x": 0.0437,
+        "y": 0.5624
+      },
+      {
+        "name": "B Main",
+        "region": "B",
+        "x": 0.0593,
+        "y": 0.6716
+      },
+      {
+        "name": "B Lobby",
+        "region": "B",
+        "x": 0.2972,
+        "y": 0.7808
+      },
+      {
+        "name": "Mid Bottom",
+        "region": "Mid",
+        "x": 0.342,
+        "y": 0.656
+      },
+      {
+        "name": "Mid Courtyard",
+        "region": "Mid",
+        "x": 0.4064,
+        "y": 0.5624
+      },
+      {
+        "name": "A Lobby",
+        "region": "A",
+        "x": 0.656,
+        "y": 0.656
+      },
+      {
+        "name": "A Main",
+        "region": "A",
+        "x": 0.6716,
+        "y": 0.5468
+      },
+      {
+        "name": "A Link",
+        "region": "A",
+        "x": 0.734,
+        "y": 0.344
+      },
+      {
+        "name": "A Site",
+        "region": "A",
+        "x": 0.7496,
+        "y": 0.4376
+      },
+      {
+        "name": "A Elbow",
+        "region": "A",
+        "x": 0.8276,
+        "y": 0.5
+      },
+      {
+        "name": "A Alley",
+        "region": "A",
+        "x": 0.7808,
+        "y": 0.2504
+      },
+      {
+        "name": "Defender Side Spawn",
+        "region": "Defender Side",
+        "x": 0.3449,
+        "y": 0.2188
+      },
+      {
+        "name": "Mid Top",
+        "region": "Mid",
+        "x": 0.344,
+        "y": 0.3596
+      },
+      {
+        "name": "Attacker Side Spawn",
+        "region": "Attacker Side",
+        "x": 0.4688,
+        "y": 0.9856
+      }
+    ]
+  }
+]

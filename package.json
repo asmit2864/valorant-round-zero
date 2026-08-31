@@ -1,0 +1,29 @@
+{
+  "name": "valo-assistant",
+  "private": true,
+  "version": "0.1.0",
+  "type": "module",
+  "description": "Offline-first Valorant strategy blueprints. Pick map + 10 agents, get animated pro-style strats. Zero runtime AI.",
+  "scripts": {
+    "data": "node scripts/fetch-game-data.mjs && tsx scripts/fetch-assets.ts",
+    "validate": "tsx scripts/validate.ts",
+    "preview:strat": "tsx scripts/render-demo.ts",
+    "dev": "vite",
+    "build": "tsc --noEmit && vite build && tsx scripts/make-sw.ts",
+    "preview": "vite preview"
+  },
+  "devDependencies": {
+    "@types/node": "^26.4.0",
+    "@types/react": "^19.2.18",
+    "@types/react-dom": "^19.2.5",
+    "@vitejs/plugin-react": "^6.1.1",
+    "sharp": "^0.35.4",
+    "tsx": "^4.23.12",
+    "typescript": "^5.9.3",
+    "vite": "^8.2.2"
+  },
+  "dependencies": {
+    "react": "^19.2.8",
+    "react-dom": "^19.2.8"
+  }
+}

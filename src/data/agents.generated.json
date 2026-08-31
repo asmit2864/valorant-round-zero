@@ -1,0 +1,872 @@
+[
+  {
+    "id": "astra",
+    "uuid": "41fb69c1-4189-7b37-f117-bcaf1e96f1bf",
+    "name": "Astra",
+    "role": "Controller",
+    "icon": "/assets/agents/astra.webp",
+    "portrait": "/assets/agents/astra-full.webp",
+    "abilities": [
+      {
+        "slot": "Ability1",
+        "name": "Nova Pulse",
+        "icon": "/assets/abilities/astra-ability1.webp"
+      },
+      {
+        "slot": "Ability2",
+        "name": "Nebula  / Dissipate",
+        "icon": "/assets/abilities/astra-ability2.webp"
+      },
+      {
+        "slot": "Grenade",
+        "name": "Gravity Well",
+        "icon": "/assets/abilities/astra-grenade.webp"
+      },
+      {
+        "slot": "Ultimate",
+        "name": "Astral Form / Cosmic Divide",
+        "icon": "/assets/abilities/astra-ultimate.webp"
+      }
+    ]
+  },
+  {
+    "id": "breach",
+    "uuid": "5f8d3a7f-467b-97f3-062c-13acf203c006",
+    "name": "Breach",
+    "role": "Initiator",
+    "icon": "/assets/agents/breach.webp",
+    "portrait": "/assets/agents/breach-full.webp",
+    "abilities": [
+      {
+        "slot": "Ability1",
+        "name": "Flashpoint",
+        "icon": "/assets/abilities/breach-ability1.webp"
+      },
+      {
+        "slot": "Ability2",
+        "name": "Fault Line",
+        "icon": "/assets/abilities/breach-ability2.webp"
+      },
+      {
+        "slot": "Grenade",
+        "name": "Aftershock",
+        "icon": "/assets/abilities/breach-grenade.webp"
+      },
+      {
+        "slot": "Ultimate",
+        "name": "Rolling Thunder",
+        "icon": "/assets/abilities/breach-ultimate.webp"
+      }
+    ]
+  },
+  {
+    "id": "brimstone",
+    "uuid": "9f0d8ba9-4140-b941-57d3-a7ad57c6b417",
+    "name": "Brimstone",
+    "role": "Controller",
+    "icon": "/assets/agents/brimstone.webp",
+    "portrait": "/assets/agents/brimstone-full.webp",
+    "abilities": [
+      {
+        "slot": "Grenade",
+        "name": "Stim Beacon",
+        "icon": "/assets/abilities/brimstone-grenade.webp"
+      },
+      {
+        "slot": "Ability1",
+        "name": "Incendiary",
+        "icon": "/assets/abilities/brimstone-ability1.webp"
+      },
+      {
+        "slot": "Ability2",
+        "name": "Sky Smoke",
+        "icon": "/assets/abilities/brimstone-ability2.webp"
+      },
+      {
+        "slot": "Ultimate",
+        "name": "Orbital Strike",
+        "icon": "/assets/abilities/brimstone-ultimate.webp"
+      }
+    ]
+  },
+  {
+    "id": "chamber",
+    "uuid": "22697a3d-45bf-8dd7-4fec-84a9e28c69d7",
+    "name": "Chamber",
+    "role": "Sentinel",
+    "icon": "/assets/agents/chamber.webp",
+    "portrait": "/assets/agents/chamber-full.webp",
+    "abilities": [
+      {
+        "slot": "Ability2",
+        "name": "Rendezvous",
+        "icon": "/assets/abilities/chamber-ability2.webp"
+      },
+      {
+        "slot": "Grenade",
+        "name": "Trademark",
+        "icon": "/assets/abilities/chamber-grenade.webp"
+      },
+      {
+        "slot": "Ability1",
+        "name": "Headhunter",
+        "icon": "/assets/abilities/chamber-ability1.webp"
+      },
+      {
+        "slot": "Ultimate",
+        "name": "Tour De Force",
+        "icon": "/assets/abilities/chamber-ultimate.webp"
+      }
+    ]
+  },
+  {
+    "id": "clove",
+    "uuid": "1dbf2edd-4729-0984-3115-daa5eed44993",
+    "name": "Clove",
+    "role": "Controller",
+    "icon": "/assets/agents/clove.webp",
+    "portrait": "/assets/agents/clove-full.webp",
+    "abilities": [
+      {
+        "slot": "Grenade",
+        "name": "Pick-me-up",
+        "icon": "/assets/abilities/clove-grenade.webp"
+      },
+      {
+        "slot": "Ability2",
+        "name": "Ruse",
+        "icon": "/assets/abilities/clove-ability2.webp"
+      },
+      {
+        "slot": "Ultimate",
+        "name": "Not Dead Yet",
+        "icon": "/assets/abilities/clove-ultimate.webp"
+      },
+      {
+        "slot": "Ability1",
+        "name": "Meddle",
+        "icon": "/assets/abilities/clove-ability1.webp"
+      }
+    ]
+  },
+  {
+    "id": "cypher",
+    "uuid": "117ed9e3-49f3-6512-3ccf-0cada7e3823b",
+    "name": "Cypher",
+    "role": "Sentinel",
+    "icon": "/assets/agents/cypher.webp",
+    "portrait": "/assets/agents/cypher-full.webp",
+    "abilities": [
+      {
+        "slot": "Ability1",
+        "name": "Cyber Cage",
+        "icon": "/assets/abilities/cypher-ability1.webp"
+      },
+      {
+        "slot": "Ability2",
+        "name": "Spycam",
+        "icon": "/assets/abilities/cypher-ability2.webp"
+      },
+      {
+        "slot": "Grenade",
+        "name": "Trapwire",
+        "icon": "/assets/abilities/cypher-grenade.webp"
+      },
+      {
+        "slot": "Ultimate",
+        "name": "Neural Theft",
+        "icon": "/assets/abilities/cypher-ultimate.webp"
+      }
+    ]
+  },
+  {
+    "id": "deadlock",
+    "uuid": "cc8b64c8-4b25-4ff9-6e7f-37b4da43d235",
+    "name": "Deadlock",
+    "role": "Sentinel",
+    "icon": "/assets/agents/deadlock.webp",
+    "portrait": "/assets/agents/deadlock-full.webp",
+    "abilities": [
+      {
+        "slot": "Ability1",
+        "name": "Sonic Sensor",
+        "icon": "/assets/abilities/deadlock-ability1.webp"
+      },
+      {
+        "slot": "Grenade",
+        "name": "Barrier Mesh",
+        "icon": "/assets/abilities/deadlock-grenade.webp"
+      },
+      {
+        "slot": "Ability2",
+        "name": "GravNet",
+        "icon": "/assets/abilities/deadlock-ability2.webp"
+      },
+      {
+        "slot": "Ultimate",
+        "name": "Annihilation",
+        "icon": "/assets/abilities/deadlock-ultimate.webp"
+      }
+    ]
+  },
+  {
+    "id": "fade",
+    "uuid": "dade69b4-4f5a-8528-247b-219e5a1facd6",
+    "name": "Fade",
+    "role": "Initiator",
+    "icon": "/assets/agents/fade.webp",
+    "portrait": "/assets/agents/fade-full.webp",
+    "abilities": [
+      {
+        "slot": "Ability1",
+        "name": "Seize",
+        "icon": "/assets/abilities/fade-ability1.webp"
+      },
+      {
+        "slot": "Ability2",
+        "name": "Haunt",
+        "icon": "/assets/abilities/fade-ability2.webp"
+      },
+      {
+        "slot": "Grenade",
+        "name": "Prowler",
+        "icon": "/assets/abilities/fade-grenade.webp"
+      },
+      {
+        "slot": "Ultimate",
+        "name": "Nightfall",
+        "icon": "/assets/abilities/fade-ultimate.webp"
+      }
+    ]
+  },
+  {
+    "id": "gekko",
+    "uuid": "e370fa57-4757-3604-3648-499e1f642d3f",
+    "name": "Gekko",
+    "role": "Initiator",
+    "icon": "/assets/agents/gekko.webp",
+    "portrait": "/assets/agents/gekko-full.webp",
+    "abilities": [
+      {
+        "slot": "Ability1",
+        "name": "Wingman",
+        "icon": "/assets/abilities/gekko-ability1.webp"
+      },
+      {
+        "slot": "Ability2",
+        "name": "Dizzy",
+        "icon": "/assets/abilities/gekko-ability2.webp"
+      },
+      {
+        "slot": "Grenade",
+        "name": "Mosh Pit",
+        "icon": "/assets/abilities/gekko-grenade.webp"
+      },
+      {
+        "slot": "Ultimate",
+        "name": "Thrash",
+        "icon": "/assets/abilities/gekko-ultimate.webp"
+      }
+    ]
+  },
+  {
+    "id": "harbor",
+    "uuid": "95b78ed7-4637-86d9-7e41-71ba8c293152",
+    "name": "Harbor",
+    "role": "Controller",
+    "icon": "/assets/agents/harbor.webp",
+    "portrait": "/assets/agents/harbor-full.webp",
+    "abilities": [
+      {
+        "slot": "Ability1",
+        "name": "High Tide",
+        "icon": "/assets/abilities/harbor-ability1.webp"
+      },
+      {
+        "slot": "Grenade",
+        "name": "Storm Surge",
+        "icon": "/assets/abilities/harbor-grenade.webp"
+      },
+      {
+        "slot": "Ability2",
+        "name": "Cove",
+        "icon": "/assets/abilities/harbor-ability2.webp"
+      },
+      {
+        "slot": "Ultimate",
+        "name": "Reckoning",
+        "icon": "/assets/abilities/harbor-ultimate.webp"
+      }
+    ]
+  },
+  {
+    "id": "iso",
+    "uuid": "0e38b510-41a8-5780-5e8f-568b2a4f2d6c",
+    "name": "Iso",
+    "role": "Duelist",
+    "icon": "/assets/agents/iso.webp",
+    "portrait": "/assets/agents/iso-full.webp",
+    "abilities": [
+      {
+        "slot": "Ability1",
+        "name": "Undercut",
+        "icon": "/assets/abilities/iso-ability1.webp"
+      },
+      {
+        "slot": "Ultimate",
+        "name": "Kill Contract",
+        "icon": "/assets/abilities/iso-ultimate.webp"
+      },
+      {
+        "slot": "Ability2",
+        "name": "Double Tap",
+        "icon": "/assets/abilities/iso-ability2.webp"
+      },
+      {
+        "slot": "Grenade",
+        "name": "Contingency",
+        "icon": "/assets/abilities/iso-grenade.webp"
+      }
+    ]
+  },
+  {
+    "id": "jett",
+    "uuid": "add6443a-41bd-e414-f6ad-e58d267f4e95",
+    "name": "Jett",
+    "role": "Duelist",
+    "icon": "/assets/agents/jett.webp",
+    "portrait": "/assets/agents/jett-full.webp",
+    "abilities": [
+      {
+        "slot": "Ability1",
+        "name": "Updraft",
+        "icon": "/assets/abilities/jett-ability1.webp"
+      },
+      {
+        "slot": "Ability2",
+        "name": "Tailwind",
+        "icon": "/assets/abilities/jett-ability2.webp"
+      },
+      {
+        "slot": "Grenade",
+        "name": "Cloudburst",
+        "icon": "/assets/abilities/jett-grenade.webp"
+      },
+      {
+        "slot": "Ultimate",
+        "name": "Blade Storm",
+        "icon": "/assets/abilities/jett-ultimate.webp"
+      }
+    ]
+  },
+  {
+    "id": "kay-o",
+    "uuid": "601dbbe7-43ce-be57-2a40-4abd24953621",
+    "name": "KAY/O",
+    "role": "Initiator",
+    "icon": "/assets/agents/kay-o.webp",
+    "portrait": "/assets/agents/kay-o-full.webp",
+    "abilities": [
+      {
+        "slot": "Grenade",
+        "name": "FRAG/ment",
+        "icon": "/assets/abilities/kay-o-grenade.webp"
+      },
+      {
+        "slot": "Ability1",
+        "name": "FLASH/drive",
+        "icon": "/assets/abilities/kay-o-ability1.webp"
+      },
+      {
+        "slot": "Ability2",
+        "name": "ZERO/point",
+        "icon": "/assets/abilities/kay-o-ability2.webp"
+      },
+      {
+        "slot": "Ultimate",
+        "name": "NULL/cmd",
+        "icon": "/assets/abilities/kay-o-ultimate.webp"
+      }
+    ]
+  },
+  {
+    "id": "killjoy",
+    "uuid": "1e58de9c-4950-5125-93e9-a0aee9f98746",
+    "name": "Killjoy",
+    "role": "Sentinel",
+    "icon": "/assets/agents/killjoy.webp",
+    "portrait": "/assets/agents/killjoy-full.webp",
+    "abilities": [
+      {
+        "slot": "Grenade",
+        "name": "Nanoswarm",
+        "icon": "/assets/abilities/killjoy-grenade.webp"
+      },
+      {
+        "slot": "Ability1",
+        "name": "ALARMBOT",
+        "icon": "/assets/abilities/killjoy-ability1.webp"
+      },
+      {
+        "slot": "Ability2",
+        "name": "TURRET",
+        "icon": "/assets/abilities/killjoy-ability2.webp"
+      },
+      {
+        "slot": "Ultimate",
+        "name": "Lockdown",
+        "icon": "/assets/abilities/killjoy-ultimate.webp"
+      }
+    ]
+  },
+  {
+    "id": "miks",
+    "uuid": "7c8a4701-4de6-9355-b254-e09bc2a34b72",
+    "name": "Miks",
+    "role": "Controller",
+    "icon": "/assets/agents/miks.webp",
+    "portrait": "/assets/agents/miks-full.webp",
+    "abilities": [
+      {
+        "slot": "Grenade",
+        "name": "M-pulse",
+        "icon": "/assets/abilities/miks-grenade.webp"
+      },
+      {
+        "slot": "Ability2",
+        "name": "Waveform",
+        "icon": "/assets/abilities/miks-ability2.webp"
+      },
+      {
+        "slot": "Ability1",
+        "name": "Harmonize",
+        "icon": "/assets/abilities/miks-ability1.webp"
+      },
+      {
+        "slot": "Ultimate",
+        "name": "Bassquake",
+        "icon": "/assets/abilities/miks-ultimate.webp"
+      }
+    ]
+  },
+  {
+    "id": "neon",
+    "uuid": "bb2a4828-46eb-8cd1-e765-15848195d751",
+    "name": "Neon",
+    "role": "Duelist",
+    "icon": "/assets/agents/neon.webp",
+    "portrait": "/assets/agents/neon-full.webp",
+    "abilities": [
+      {
+        "slot": "Ability2",
+        "name": "High Gear",
+        "icon": "/assets/abilities/neon-ability2.webp"
+      },
+      {
+        "slot": "Ability1",
+        "name": "Relay Bolt",
+        "icon": "/assets/abilities/neon-ability1.webp"
+      },
+      {
+        "slot": "Grenade",
+        "name": "Fast Lane",
+        "icon": "/assets/abilities/neon-grenade.webp"
+      },
+      {
+        "slot": "Ultimate",
+        "name": "Overdrive",
+        "icon": "/assets/abilities/neon-ultimate.webp"
+      }
+    ]
+  },
+  {
+    "id": "omen",
+    "uuid": "8e253930-4c05-31dd-1b6c-968525494517",
+    "name": "Omen",
+    "role": "Controller",
+    "icon": "/assets/agents/omen.webp",
+    "portrait": "/assets/agents/omen-full.webp",
+    "abilities": [
+      {
+        "slot": "Ability1",
+        "name": "Paranoia",
+        "icon": "/assets/abilities/omen-ability1.webp"
+      },
+      {
+        "slot": "Ability2",
+        "name": "Dark Cover",
+        "icon": "/assets/abilities/omen-ability2.webp"
+      },
+      {
+        "slot": "Grenade",
+        "name": "Shrouded Step",
+        "icon": "/assets/abilities/omen-grenade.webp"
+      },
+      {
+        "slot": "Ultimate",
+        "name": "From the Shadows",
+        "icon": "/assets/abilities/omen-ultimate.webp"
+      }
+    ]
+  },
+  {
+    "id": "phoenix",
+    "uuid": "eb93336a-449b-9c1b-0a54-a891f7921d69",
+    "name": "Phoenix",
+    "role": "Duelist",
+    "icon": "/assets/agents/phoenix.webp",
+    "portrait": "/assets/agents/phoenix-full.webp",
+    "abilities": [
+      {
+        "slot": "Grenade",
+        "name": "Blaze",
+        "icon": "/assets/abilities/phoenix-grenade.webp"
+      },
+      {
+        "slot": "Ability1",
+        "name": "Hot Hands",
+        "icon": "/assets/abilities/phoenix-ability1.webp"
+      },
+      {
+        "slot": "Ability2",
+        "name": "Curveball",
+        "icon": "/assets/abilities/phoenix-ability2.webp"
+      },
+      {
+        "slot": "Ultimate",
+        "name": "Run it Back",
+        "icon": "/assets/abilities/phoenix-ultimate.webp"
+      }
+    ]
+  },
+  {
+    "id": "raze",
+    "uuid": "f94c3b30-42be-e959-889c-5aa313dba261",
+    "name": "Raze",
+    "role": "Duelist",
+    "icon": "/assets/agents/raze.webp",
+    "portrait": "/assets/agents/raze-full.webp",
+    "abilities": [
+      {
+        "slot": "Ability1",
+        "name": "Blast Pack",
+        "icon": "/assets/abilities/raze-ability1.webp"
+      },
+      {
+        "slot": "Ability2",
+        "name": "Paint Shells",
+        "icon": "/assets/abilities/raze-ability2.webp"
+      },
+      {
+        "slot": "Grenade",
+        "name": "Boom Bot",
+        "icon": "/assets/abilities/raze-grenade.webp"
+      },
+      {
+        "slot": "Ultimate",
+        "name": "Showstopper",
+        "icon": "/assets/abilities/raze-ultimate.webp"
+      }
+    ]
+  },
+  {
+    "id": "reyna",
+    "uuid": "a3bfb853-43b2-7238-a4f1-ad90e9e46bcc",
+    "name": "Reyna",
+    "role": "Duelist",
+    "icon": "/assets/agents/reyna.webp",
+    "portrait": "/assets/agents/reyna-full.webp",
+    "abilities": [
+      {
+        "slot": "Ability1",
+        "name": "Devour",
+        "icon": "/assets/abilities/reyna-ability1.webp"
+      },
+      {
+        "slot": "Ability2",
+        "name": "Dismiss",
+        "icon": "/assets/abilities/reyna-ability2.webp"
+      },
+      {
+        "slot": "Grenade",
+        "name": "Leer",
+        "icon": "/assets/abilities/reyna-grenade.webp"
+      },
+      {
+        "slot": "Ultimate",
+        "name": "Empress",
+        "icon": "/assets/abilities/reyna-ultimate.webp"
+      }
+    ]
+  },
+  {
+    "id": "sage",
+    "uuid": "569fdd95-4d10-43ab-ca70-79becc718b46",
+    "name": "Sage",
+    "role": "Sentinel",
+    "icon": "/assets/agents/sage.webp",
+    "portrait": "/assets/agents/sage-full.webp",
+    "abilities": [
+      {
+        "slot": "Ability1",
+        "name": "Slow Orb",
+        "icon": "/assets/abilities/sage-ability1.webp"
+      },
+      {
+        "slot": "Ability2",
+        "name": "Healing Orb",
+        "icon": "/assets/abilities/sage-ability2.webp"
+      },
+      {
+        "slot": "Grenade",
+        "name": "Barrier Orb",
+        "icon": "/assets/abilities/sage-grenade.webp"
+      },
+      {
+        "slot": "Ultimate",
+        "name": "Resurrection",
+        "icon": "/assets/abilities/sage-ultimate.webp"
+      }
+    ]
+  },
+  {
+    "id": "skye",
+    "uuid": "6f2a04ca-43e0-be17-7f36-b3908627744d",
+    "name": "Skye",
+    "role": "Initiator",
+    "icon": "/assets/agents/skye.webp",
+    "portrait": "/assets/agents/skye-full.webp",
+    "abilities": [
+      {
+        "slot": "Ability1",
+        "name": "Trailblazer",
+        "icon": "/assets/abilities/skye-ability1.webp"
+      },
+      {
+        "slot": "Ability2",
+        "name": "Guiding Light",
+        "icon": "/assets/abilities/skye-ability2.webp"
+      },
+      {
+        "slot": "Grenade",
+        "name": "Regrowth",
+        "icon": "/assets/abilities/skye-grenade.webp"
+      },
+      {
+        "slot": "Ultimate",
+        "name": "Seekers",
+        "icon": "/assets/abilities/skye-ultimate.webp"
+      }
+    ]
+  },
+  {
+    "id": "sova",
+    "uuid": "320b2a48-4d9b-a075-30f1-1f93a9b638fa",
+    "name": "Sova",
+    "role": "Initiator",
+    "icon": "/assets/agents/sova.webp",
+    "portrait": "/assets/agents/sova-full.webp",
+    "abilities": [
+      {
+        "slot": "Ability1",
+        "name": "Shock Bolt",
+        "icon": "/assets/abilities/sova-ability1.webp"
+      },
+      {
+        "slot": "Ability2",
+        "name": "Recon Bolt",
+        "icon": "/assets/abilities/sova-ability2.webp"
+      },
+      {
+        "slot": "Grenade",
+        "name": "Owl Drone",
+        "icon": "/assets/abilities/sova-grenade.webp"
+      },
+      {
+        "slot": "Ultimate",
+        "name": "Hunter's Fury",
+        "icon": "/assets/abilities/sova-ultimate.webp"
+      }
+    ]
+  },
+  {
+    "id": "tejo",
+    "uuid": "b444168c-4e35-8076-db47-ef9bf368f384",
+    "name": "Tejo",
+    "role": "Initiator",
+    "icon": "/assets/agents/tejo.webp",
+    "portrait": "/assets/agents/tejo-full.webp",
+    "abilities": [
+      {
+        "slot": "Ability2",
+        "name": "Guided Salvo",
+        "icon": "/assets/abilities/tejo-ability2.webp"
+      },
+      {
+        "slot": "Ability1",
+        "name": "Special Delivery",
+        "icon": "/assets/abilities/tejo-ability1.webp"
+      },
+      {
+        "slot": "Ultimate",
+        "name": "Armageddon",
+        "icon": "/assets/abilities/tejo-ultimate.webp"
+      },
+      {
+        "slot": "Grenade",
+        "name": "Stealth Drone",
+        "icon": "/assets/abilities/tejo-grenade.webp"
+      }
+    ]
+  },
+  {
+    "id": "veto",
+    "uuid": "92eeef5d-43b5-1d4a-8d03-b3927a09034b",
+    "name": "Veto",
+    "role": "Sentinel",
+    "icon": "/assets/agents/veto.webp",
+    "portrait": "/assets/agents/veto-full.webp",
+    "abilities": [
+      {
+        "slot": "Ability2",
+        "name": "Interceptor",
+        "icon": "/assets/abilities/veto-ability2.webp"
+      },
+      {
+        "slot": "Grenade",
+        "name": "Crosscut",
+        "icon": "/assets/abilities/veto-grenade.webp"
+      },
+      {
+        "slot": "Ultimate",
+        "name": "Evolution",
+        "icon": "/assets/abilities/veto-ultimate.webp"
+      },
+      {
+        "slot": "Ability1",
+        "name": "Chokehold",
+        "icon": "/assets/abilities/veto-ability1.webp"
+      }
+    ]
+  },
+  {
+    "id": "viper",
+    "uuid": "707eab51-4836-f488-046a-cda6bf494859",
+    "name": "Viper",
+    "role": "Controller",
+    "icon": "/assets/agents/viper.webp",
+    "portrait": "/assets/agents/viper-full.webp",
+    "abilities": [
+      {
+        "slot": "Ability1",
+        "name": "Poison Cloud",
+        "icon": "/assets/abilities/viper-ability1.webp"
+      },
+      {
+        "slot": "Ability2",
+        "name": "Toxic Screen",
+        "icon": "/assets/abilities/viper-ability2.webp"
+      },
+      {
+        "slot": "Grenade",
+        "name": "Snake Bite",
+        "icon": "/assets/abilities/viper-grenade.webp"
+      },
+      {
+        "slot": "Ultimate",
+        "name": "Viper's Pit",
+        "icon": "/assets/abilities/viper-ultimate.webp"
+      }
+    ]
+  },
+  {
+    "id": "vyse",
+    "uuid": "efba5359-4016-a1e5-7626-b1ae76895940",
+    "name": "Vyse",
+    "role": "Sentinel",
+    "icon": "/assets/agents/vyse.webp",
+    "portrait": "/assets/agents/vyse-full.webp",
+    "abilities": [
+      {
+        "slot": "Ability1",
+        "name": "Shear",
+        "icon": "/assets/abilities/vyse-ability1.webp"
+      },
+      {
+        "slot": "Ability2",
+        "name": "Arc Rose",
+        "icon": "/assets/abilities/vyse-ability2.webp"
+      },
+      {
+        "slot": "Grenade",
+        "name": "Razorvine",
+        "icon": "/assets/abilities/vyse-grenade.webp"
+      },
+      {
+        "slot": "Ultimate",
+        "name": "Steel Garden",
+        "icon": "/assets/abilities/vyse-ultimate.webp"
+      }
+    ]
+  },
+  {
+    "id": "waylay",
+    "uuid": "df1cb487-4902-002e-5c17-d28e83e78588",
+    "name": "Waylay",
+    "role": "Duelist",
+    "icon": "/assets/agents/waylay.webp",
+    "portrait": "/assets/agents/waylay-full.webp",
+    "abilities": [
+      {
+        "slot": "Ability2",
+        "name": "Refract",
+        "icon": "/assets/abilities/waylay-ability2.webp"
+      },
+      {
+        "slot": "Grenade",
+        "name": "Saturate",
+        "icon": "/assets/abilities/waylay-grenade.webp"
+      },
+      {
+        "slot": "Ability1",
+        "name": "Lightspeed",
+        "icon": "/assets/abilities/waylay-ability1.webp"
+      },
+      {
+        "slot": "Ultimate",
+        "name": "Convergent Paths",
+        "icon": "/assets/abilities/waylay-ultimate.webp"
+      }
+    ]
+  },
+  {
+    "id": "yoru",
+    "uuid": "7f94d92c-4234-0a36-9646-3a87eb8b5c89",
+    "name": "Yoru",
+    "role": "Duelist",
+    "icon": "/assets/agents/yoru.webp",
+    "portrait": "/assets/agents/yoru-full.webp",
+    "abilities": [
+      {
+        "slot": "Grenade",
+        "name": "FAKEOUT",
+        "icon": "/assets/abilities/yoru-grenade.webp"
+      },
+      {
+        "slot": "Ability1",
+        "name": "BLINDSIDE",
+        "icon": "/assets/abilities/yoru-ability1.webp"
+      },
+      {
+        "slot": "Ability2",
+        "name": "GATECRASH",
+        "icon": "/assets/abilities/yoru-ability2.webp"
+      },
+      {
+        "slot": "Ultimate",
+        "name": "DIMENSIONAL DRIFT",
+        "icon": "/assets/abilities/yoru-ultimate.webp"
+      }
+    ]
+  }
+]
