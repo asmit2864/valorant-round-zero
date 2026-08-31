@@ -1,0 +1,15 @@
+# Cloudflare defaults to "public, max-age=0, must-revalidate" for every asset,
+# which is correct but re-validates on each load. Vite's bundles are content
+# hashed, so those can be cached permanently instead.
+/static/*
+  Cache-Control: public, max-age=31536000, immutable
+
+# Game art is downloaded by `npm run data` under stable names, so it must stay
+# revalidated -- a Riot patch can change a minimap.
+/assets/*
+  Cache-Control: public, max-age=86400, must-revalidate
+
+# The service worker decides when everything else updates, so it must never be
+# served stale.
+/sw.js
+  Cache-Control: no-cache

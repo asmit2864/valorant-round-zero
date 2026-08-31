@@ -21,7 +21,8 @@ function walk(dir: string): string[] {
 }
 
 const files = walk(DIST)
-  .filter((f) => !f.endsWith("sw.js"))
+  // _headers is a Cloudflare build directive, not a file the app ever fetches.
+  .filter((f) => !f.endsWith("sw.js") && !f.endsWith("_headers"))
   .map((f) => "./" + relative(DIST, f).split("\\").join("/"))
   .sort();
 

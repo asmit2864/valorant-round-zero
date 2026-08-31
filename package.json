@@ -10,7 +10,9 @@
     "preview:strat": "tsx scripts/render-demo.ts",
     "dev": "vite",
     "build": "tsc --noEmit && vite build && tsx scripts/make-sw.ts",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "deploy": "npm run build && wrangler deploy",
+    "cf:login": "wrangler login"
   },
   "devDependencies": {
     "@types/node": "^26.4.0",

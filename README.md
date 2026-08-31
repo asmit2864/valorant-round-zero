@@ -31,6 +31,28 @@ situations without enumerating any of them.
 
 Run `npm run validate` and the smoke test after touching a graph or set piece.
 
+## Deploying
+
+Hosted on Cloudflare Workers as an assets-only deployment (no Worker script --
+the app is fully static). `wrangler.jsonc` holds the config.
+
+First time, once per machine:
+
+    npm run cf:login
+    npm run deploy
+
+After that, pushing to `main` deploys automatically via
+`.github/workflows/deploy.yml`, which also runs `validate` and the smoke test
+first. That workflow needs two repo secrets:
+
+| secret | where to get it |
+| --- | --- |
+| `CLOUDFLARE_API_TOKEN` | Cloudflare dashboard -> My Profile -> API Tokens -> Edit Cloudflare Workers template |
+| `CLOUDFLARE_ACCOUNT_ID` | Cloudflare dashboard -> Workers & Pages, right-hand sidebar |
+
+Game art is fetched during the deploy rather than committed, so a Riot patch
+reaches production on the next push.
+
 ## Layout
 
     src/data/

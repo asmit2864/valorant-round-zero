@@ -1,0 +1,14 @@
+{
+  "$schema": "./node_modules/wrangler/config-schema.json",
+  "name": "valorant-round-zero",
+  "compatibility_date": "2026-08-31",
+
+  // Assets-only deployment: there is no Worker script, because the whole app is
+  // static. Cloudflare serves dist/ straight from the edge.
+  "assets": {
+    "directory": "./dist",
+    // No client-side router, but this keeps any stray path serving the app
+    // rather than a bare 404 -- which matters once it is installed as a PWA.
+    "not_found_handling": "single-page-application"
+  }
+}
