@@ -89,7 +89,7 @@ export function Deck({ selection, onBack }: Props) {
       </header>
 
       <div className="stage">
-        <Blueprint strategy={current} map={map} t={t} focus={focus} />
+        <Blueprint strategy={current} map={map} graph={graphFor(mapId)} t={t} focus={focus} />
         <div className="timeline">
           <button className="play" onClick={() => { if (t >= 1) setT(0); setPlaying(!playing); }}>
             {playing ? "❚❚" : "▶"}
@@ -145,7 +145,7 @@ export function Deck({ selection, onBack }: Props) {
                       <em>{a.slot.label}</em>
                     </div>
                     <p className="note">{a.gap ?? a.slot.note}</p>
-                    <p className="route">{a.route.map((n) => n.name).join(" → ")}</p>
+                    <p className="route">{a.timed.nodes.join(" → ")}</p>
                     {(a.slot.util ?? []).map((u, ui) => (
                       <p className="util" key={ui}>
                         <b>{u.tag}</b> {u.at} → {u.target}{u.note ? ` — ${u.note}` : ""}

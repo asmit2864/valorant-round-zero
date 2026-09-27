@@ -66,6 +66,21 @@ reaches production on the next push.
       matcher.ts              agent -> slot assignment and ranking
     src/app/                  React UI (Setup, Deck, Blueprint)
 
+## Waypoint timing
+
+A bare waypoint means "get there in your own time" and the leg is spread across
+whatever phases are still free. Naming a phase pins that leg to that phase's
+window:
+
+    waypoints: [{ at: "Mid Link", phase: "setup" }, { at: "B Main", phase: "execute" }]
+
+The gap between the two is a **hold** -- the player sits at Mid Link for the
+whole of "control" and only moves on "execute". That is what makes fakes,
+staggered executes and lurks read correctly: on a fake, the B group has to be
+parked while A makes noise, not strolling across the map at constant speed.
+
+Holds are drawn as a dashed ring around the agent.
+
 ## Adding a map
 
 1. Author `src/data/graphs/<map>.json` — nodes come from `maps.generated.json`;

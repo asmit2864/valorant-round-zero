@@ -11,6 +11,7 @@ import { App } from "../src/app/App";
 import { Deck } from "../src/app/Deck";
 import { MAPS, AGENTS, READY_MAPS, graphFor, piecesFor } from "../src/lib/mapdata";
 import { rankStrategies } from "../src/lib/matcher";
+import { positionAt } from "../src/lib/timeline";
 import type { Side } from "../src/types";
 
 const ROOT = join(dirname(fileURLToPath(import.meta.url)), "..");
@@ -75,7 +76,7 @@ for (const mapId of READY_MAPS) {
     for (const [label, allies, enemies] of COMPS) {
       // Every route is drawn from spawn, so no path ever appears to begin mid-map.
       for (const s of rankStrategies(g, pieces, allies, enemies, side, 6)) {
-        const offSpawn = s.assignments.filter((a) => a.route[0]?.name !== spawn);
+        const offSpawn = s.assignments.filter((a) => a.timed.nodes[0] !== spawn);
         if (offSpawn.length) fail(`${s.piece.id}/${label}: ${offSpawn.length} route(s) do not start at ${spawn}`);
       }
       // All five players must be visible: pins may share a callout but never a
@@ -115,6 +116,30 @@ for (const mapId of READY_MAPS) {
       }
     }
   }
+}
+// Timing invariants: legs never run backwards, and a piece that authored a
+// phase on a waypoint must actually produce a hold somewhere.
+for (const mapId of READY_MAPS) {
+  const g = graphFor(mapId);
+  let holdingPieces = 0;
+  for (const side of ["attack", "defense"] as Side[]) {
+    for (const s of rankStrategies(g, piecesFor(mapId), COMPS[0][1], COMPS[0][2], side, 99)) {
+      let anyHold = false;
+      for (const a of s.assignments) {
+        let prev = -1;
+        for (const leg of a.timed.legs) {
+          if (leg.t0 < prev - 1e-6) fail(`${s.piece.id}/${a.slot.id}: leg starts before the previous one ends`);
+          if (leg.t1 <= leg.t0) fail(`${s.piece.id}/${a.slot.id}: leg has no duration`);
+          prev = leg.t1;
+        }
+        for (let k = 1; k < 10; k++) if (positionAt(a.timed, k / 10).holding) anyHold = true;
+      }
+      const authored = s.piece.slots.some((sl) => sl.waypoints.some((w) => typeof w !== "string"));
+      if (authored && !anyHold) fail(`${s.piece.id}: authored phase timing but nobody ever holds`);
+      if (anyHold) holdingPieces++;
+    }
+  }
+  ok(`${mapId}: leg timing ordered; ${holdingPieces} strategy/side combos include a hold`);
 }
 if (!errors) ok("routes start at spawn; no agent pin is hidden behind another");
 

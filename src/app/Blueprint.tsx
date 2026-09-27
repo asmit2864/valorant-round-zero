@@ -1,5 +1,7 @@
 import { useMemo } from "react";
 import type { RankedStrategy } from "../lib/matcher";
+import { positionAt } from "../lib/timeline";
+import type { MapGraph } from "../lib/graph";
 import { AGENT_BY_ID, type MapRecord } from "../lib/mapdata";
 
 export const LANE = ["#ff4655", "#00e0c6", "#ffb648", "#8b7bff", "#4ade80"];
@@ -19,25 +21,6 @@ function smooth(nodes: Pt[]): string {
          ` ${p2.x - (p3.x - p1.x) / 6},${p2.y - (p3.y - p1.y) / 6} ${p2.x},${p2.y}`;
   }
   return d;
-}
-
-/** Position along a route at normalized progress t, by cumulative segment length. */
-function pointAt(nodes: Pt[], t: number): Pt {
-  if (!nodes.length) return { x: 0, y: 0 };
-  if (nodes.length === 1) return { x: nodes[0].x * S, y: nodes[0].y * S };
-  const pts = nodes.map((n) => ({ x: n.x * S, y: n.y * S }));
-  const segs = pts.slice(1).map((p, i) => Math.hypot(p.x - pts[i].x, p.y - pts[i].y));
-  const total = segs.reduce((a, b) => a + b, 0);
-  if (total === 0) return pts[0];
-  let travel = Math.max(0, Math.min(1, t)) * total;
-  for (let i = 0; i < segs.length; i++) {
-    if (travel <= segs[i]) {
-      const f = segs[i] === 0 ? 0 : travel / segs[i];
-      return { x: pts[i].x + (pts[i + 1].x - pts[i].x) * f, y: pts[i].y + (pts[i + 1].y - pts[i].y) * f };
-    }
-    travel -= segs[i];
-  }
-  return pts[pts.length - 1];
 }
 
 /**
@@ -78,13 +61,15 @@ const UTIL_GLYPH: Record<string, string> = {
 interface Props {
   strategy: RankedStrategy;
   map: MapRecord;
+  graph: MapGraph;
   /** 0..1 through the round. */
   t: number;
   /** null shows everyone; an index isolates that one player. */
   focus: number | null;
 }
 
-export function Blueprint({ strategy, map, t, focus }: Props) {
+export function Blueprint({ strategy, map, graph, t, focus }: Props) {
+  const graphNode = (name: string) => graph.nodes.get(name) ?? null;
   const phases = strategy.piece.phases;
   const phaseStart = useMemo(() => {
     const m = new Map<string, number>();
@@ -94,8 +79,12 @@ export function Blueprint({ strategy, map, t, focus }: Props) {
 
   // Positions are resolved for the whole team before drawing, because whether a
   // pin needs nudging depends on where the other four are.
+  const states = strategy.assignments.map((a) =>
+    a.timed.points.length ? positionAt(a.timed, t) : null,
+  );
   const pins = useMemo(
-    () => decollide(strategy.assignments.map((a) => (a.polyline.length ? pointAt(a.polyline, t) : null))),
+    () => decollide(states.map((s) => (s ? { x: s.pt.x * S, y: s.pt.y * S } : null))),
+    // eslint-disable-next-line react-hooks/exhaustive-deps
     [strategy, t],
   );
 
@@ -106,25 +95,30 @@ export function Blueprint({ strategy, map, t, focus }: Props) {
 
       {strategy.assignments.map((a, i) => {
         if (focus !== null && focus !== i) return null;
-        if (!a.polyline.length) return null;
+        if (!a.timed.points.length) return null;
         const color = LANE[i % LANE.length];
-        const d = smooth(a.polyline);
-        const now = pins[i] ?? pointAt(a.polyline, t);
-        const anchor = pointAt(a.polyline, t);
+        const d = smooth(a.timed.points);
+        const state = states[i]!;
+        const anchor = { x: state.pt.x * S, y: state.pt.y * S };
+        const now = pins[i] ?? anchor;
         const agent = a.agent ? AGENT_BY_ID.get(a.agent) : null;
 
         return (
           <g key={a.slot.id}>
             <path d={d} className="bp-shadow" />
             <path d={d} stroke={color} className="bp-route" opacity={a.agent ? 1 : 0.4} />
-            <circle cx={a.polyline[0].x * S} cy={a.polyline[0].y * S} r={7} fill={color} opacity={0.55} />
+            <circle cx={a.timed.points[0].x * S} cy={a.timed.points[0].y * S} r={7} fill={color} opacity={0.55} />
 
             {(a.slot.util ?? []).map((u, ui) => {
               const start = phaseStart.get(u.phase) ?? 0;
               if (t < start) return null;
-              const target = a.route.find((n) => n.name === u.target);
-              const from = a.route.find((n) => n.name === u.at) ?? a.route[0];
-              const at = target ?? from;
+              // Utility is drawn on the callout it lands on, falling back to
+              // where it is thrown from if that spot is not on this route.
+              const nodeAt = (name: string) => {
+                const idx = a.timed.nodes.indexOf(name);
+                return idx === -1 ? null : graphNode(name);
+              };
+              const at = nodeAt(u.target) ?? nodeAt(u.at) ?? { x: a.timed.points[0].x, y: a.timed.points[0].y };
               return (
                 <g key={ui} className="bp-util">
                   <circle cx={at.x * S} cy={at.y * S} r={15} fill={color} opacity={0.18} />
@@ -142,6 +136,10 @@ export function Blueprint({ strategy, map, t, focus }: Props) {
             <g transform={`translate(${now.x} ${now.y})`} className="bp-pin">
               {agent ? (
                 <>
+                  {state.holding && (
+                    <circle r={30} fill="none" stroke={color} strokeWidth={2}
+                            strokeDasharray="3 5" opacity={0.7} className="bp-hold" />
+                  )}
                   <circle r={22} fill={color} />
                   <clipPath id={`clip-${strategy.piece.id}-${i}`}>
                     <circle r={19} />

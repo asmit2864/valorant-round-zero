@@ -66,6 +66,19 @@ export interface UtilAction {
   note?: string;
 }
 
+/**
+ * A point on a slot's route.
+ *
+ * A bare string means "get there in your own time" and the leg is spread across
+ * whatever phases are still free. Naming a phase pins the leg to that phase's
+ * window, which is what makes holds possible: if one leg lands in "control" and
+ * the next in "execute", the player sits still for the whole gap between them.
+ */
+export type Waypoint = string | { at: string; phase: string };
+
+export const wpAt = (w: Waypoint): string => (typeof w === "string" ? w : w.at);
+export const wpPhase = (w: Waypoint): string | undefined => (typeof w === "string" ? undefined : w.phase);
+
 export interface Slot {
   id: string;
   label: string;
@@ -75,7 +88,7 @@ export interface Slot {
   prefer?: Tag[];
   /** Power stat used as the final tiebreak. */
   weight?: keyof Power;
-  waypoints: string[];
+  waypoints: Waypoint[];
   util?: UtilAction[];
   note: string;
 }

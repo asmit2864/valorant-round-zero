@@ -4,6 +4,7 @@
  */
 import { readFileSync } from "node:fs";
 import { buildGraph, expandRoute, findPath } from "../src/lib/graph";
+import { wpAt } from "../src/types";
 import { rankStrategies } from "../src/lib/matcher";
 import { AGENT_CAPABILITIES } from "../src/data/agent-capabilities";
 import { ASCENT_SET_PIECES } from "../src/data/setpieces/ascent";
@@ -60,10 +61,10 @@ console.log(`  ${ASCENT_SET_PIECES.length} pieces (${attack} attack, ${ASCENT_SE
 for (const piece of ASCENT_SET_PIECES) {
   if (piece.slots.length !== 5) fail(`${piece.id}: ${piece.slots.length} slots, expected 5`);
   for (const slot of piece.slots) {
-    for (const w of slot.waypoints) {
+    for (const w of slot.waypoints.map(wpAt)) {
       try { findPath(g, w, w); } catch { fail(`${piece.id}/${slot.id}: unknown callout "${w}"`); }
     }
-    try { expandRoute(g, slot.waypoints); }
+    try { expandRoute(g, slot.waypoints.map(wpAt)); }
     catch (e) { fail(`${piece.id}/${slot.id}: ${(e as Error).message}`); }
     for (const u of slot.util ?? []) {
       for (const c of [u.at, u.target]) {
@@ -95,7 +96,7 @@ for (const [label, allies, enemies] of comps) {
     console.log(
       `  ${label.padEnd(24)} ${side.padEnd(8)} -> "${top.piece.name}" fit=${(top.fit * 100).toFixed(0)}% ` +
       `counter=${top.counter >= 0 ? "+" : ""}${(top.counter * 100).toFixed(0)}% ` +
-      `gaps=${unfilled} route=${top.assignments[0].route.length}n`,
+      `gaps=${unfilled} route=${top.assignments[0].timed.nodes.length}n`,
     );
   }
 }
@@ -105,7 +106,7 @@ const demo = rankStrategies(g, ASCENT_SET_PIECES, ["jett", "omen", "sova", "kill
 console.log(`\n== sample output ==\n  ${demo.piece.name}  (fit ${(demo.fit * 100).toFixed(0)}%)`);
 console.log(`  ${demo.piece.premise}`);
 for (const a of demo.assignments) {
-  console.log(`   ${(a.agent ?? "-- UNFILLED").padEnd(10)} ${a.slot.label.padEnd(15)} ${a.route.map((n) => n.name).join(" > ")}`);
+  console.log(`   ${(a.agent ?? "-- UNFILLED").padEnd(10)} ${a.slot.label.padEnd(15)} ${a.timed.nodes.join(" > ")}`);
 }
 console.log("  watch out:");
 for (const w of demo.watchOut.slice(0, 3)) console.log(`   ${w.agent}: ${w.note}`);
