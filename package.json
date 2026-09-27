@@ -9,6 +9,7 @@
     "validate": "tsx scripts/validate.ts",
     "preview:strat": "tsx scripts/render-demo.ts",
     "dev": "vite",
+    "dev:phone": "vite --host",
     "build": "tsc --noEmit && vite build && tsx scripts/make-sw.ts",
     "preview": "vite preview",
     "deploy": "npm run build && wrangler deploy",
