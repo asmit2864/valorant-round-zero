@@ -66,6 +66,31 @@ for (const mapId of READY_MAPS) {
 }
 if (!errors) ok(`Deck renders for ${READY_MAPS.length} map(s) x 2 sides x ${COMPS.length} comps`);
 
+console.log("\n== regressions ==");
+for (const mapId of READY_MAPS) {
+  const g = graphFor(mapId);
+  const pieces = piecesFor(mapId);
+  for (const side of ["attack", "defense"] as Side[]) {
+    const spawn = g.spawns[side];
+    for (const [label, allies, enemies] of COMPS) {
+      // Every route is drawn from spawn, so no path ever appears to begin mid-map.
+      for (const s of rankStrategies(g, pieces, allies, enemies, side, 6)) {
+        const offSpawn = s.assignments.filter((a) => a.route[0]?.name !== spawn);
+        if (offSpawn.length) fail(`${s.piece.id}/${label}: ${offSpawn.length} route(s) do not start at ${spawn}`);
+      }
+      // All five players must be visible: pins may share a callout but never a
+      // drawn position, or an agent is hidden underneath another.
+      const html = renderToString(<Deck selection={{ mapId, side, allies, enemies }} onBack={() => {}} />);
+      const cards = html.split("<article").length > 1 ? html.split("<article") : [html];
+      const pins = [...cards[0].matchAll(/translate\(([-\d.]+) ([-\d.]+)\)/g)].map((m) => `${m[1]},${m[2]}`);
+      if (pins.length && new Set(pins).size !== pins.length) {
+        fail(`${mapId}/${side}/${label}: ${pins.length - new Set(pins).size} agent pin(s) hidden behind another`);
+      }
+    }
+  }
+}
+if (!errors) ok("routes start at spawn; no agent pin is hidden behind another");
+
 console.log("\n== coverage: every agent usable in every slot-set ==");
 for (const mapId of READY_MAPS) {
   const g = graphFor(mapId);

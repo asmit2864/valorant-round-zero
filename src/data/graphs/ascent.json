@@ -8,6 +8,8 @@
     { "name": "B Stairs", "x": 0.222, "y": 0.646, "approx": true },
     { "name": "B Backsite", "x": 0.232, "y": 0.784, "approx": true }
   ],
+  "_spawns_comment": "Every route is drawn from the side's spawn, so a path always shows where the player actually comes from rather than starting mid-map.",
+  "spawns": { "attack": "Attacker Side Spawn", "defense": "Defender Side Spawn" },
   "aliases": { "A Heaven": "A Rafters", "Market": "Mid Market", "Catwalk": "Mid Catwalk", "Tree": "A Tree", "Pizza": "Mid Pizza" },
   "edges": [
     ["Attacker Side Spawn", "A Lobby"],

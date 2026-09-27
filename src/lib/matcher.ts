@@ -105,6 +105,17 @@ function enemyTags(enemy: string[]): Set<Tag> {
   return tags;
 }
 
+/**
+ * Every route is drawn from the side's spawn. Set pieces name only the
+ * waypoints that matter tactically, so without this a path would appear to
+ * begin somewhere in the middle of the map.
+ */
+function routeFrom(graph: MapGraph, side: Side, waypoints: string[]) {
+  const spawn = graph.spawns[side];
+  const full = spawn && waypoints[0] !== spawn ? [spawn, ...waypoints] : waypoints;
+  return expandRoute(graph, full);
+}
+
 export function rankStrategies(
   graph: MapGraph,
   pieces: SetPiece[],
@@ -137,13 +148,13 @@ export function rankStrategies(
         if (!agent) {
           const gap = `No agent in your comp provides ${slot.needs.join(" or ")} - ${slot.label} is unfilled.`;
           warnings.push(gap);
-          return { slot, agent: null, score: 0, gap, route: expandRoute(graph, slot.waypoints) };
+          return { slot, agent: null, score: 0, gap, route: routeFrom(graph, side, slot.waypoints) };
         }
         return {
           slot,
           agent,
           score: scoreAgent(agent, slot),
-          route: expandRoute(graph, slot.waypoints),
+          route: routeFrom(graph, side, slot.waypoints),
         };
       });
 

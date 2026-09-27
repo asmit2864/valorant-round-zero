@@ -39,6 +39,35 @@ function pointAt(nodes: Node[], t: number): { x: number; y: number } {
   return pts[pts.length - 1];
 }
 
+/**
+ * Slots routinely end at the same callout (three players staging in A Main is a
+ * normal plan), and stacked pins hide each other completely. Fan any coincident
+ * pins out around their shared point so all five players are always visible.
+ */
+function decollide(points: ({ x: number; y: number } | null)[]): ({ x: number; y: number } | null)[] {
+  const CELL = 34;
+  const groups = new Map<string, number[]>();
+  points.forEach((p, i) => {
+    if (!p) return;
+    const key = `${Math.round(p.x / CELL)},${Math.round(p.y / CELL)}`;
+    groups.set(key, [...(groups.get(key) ?? []), i]);
+  });
+
+  const out = [...points];
+  for (const members of groups.values()) {
+    if (members.length < 2) continue;
+    const radius = 15 + members.length * 4;
+    members.forEach((idx, n) => {
+      const angle = (n / members.length) * Math.PI * 2 - Math.PI / 2;
+      out[idx] = {
+        x: points[idx]!.x + Math.cos(angle) * radius,
+        y: points[idx]!.y + Math.sin(angle) * radius,
+      };
+    });
+  }
+  return out;
+}
+
 const UTIL_GLYPH: Record<string, string> = {
   smoke: "◍", miniSmoke: "◌", wall: "▬", blockPath: "▭", flash: "✸", concuss: "◎",
   recon: "◈", suppress: "⊘", utilDestroy: "✕", molly: "▲", slow: "≈", trap: "⊙",
@@ -62,6 +91,13 @@ export function Blueprint({ strategy, map, t, focus }: Props) {
     return m;
   }, [phases]);
 
+  // Positions are resolved for the whole team before drawing, because whether a
+  // pin needs nudging depends on where the other four are.
+  const pins = useMemo(
+    () => decollide(strategy.assignments.map((a) => (a.route.length ? pointAt(a.route, t) : null))),
+    [strategy, t],
+  );
+
   return (
     <svg className="bp" viewBox={`0 0 ${S} ${S}`} role="img" aria-label={`${map.name} blueprint`}>
       <image href={map.minimap} x="0" y="0" width={S} height={S} opacity="0.8" />
@@ -72,7 +108,8 @@ export function Blueprint({ strategy, map, t, focus }: Props) {
         if (!a.route.length) return null;
         const color = LANE[i % LANE.length];
         const d = smooth(a.route);
-        const now = pointAt(a.route, t);
+        const now = pins[i] ?? pointAt(a.route, t);
+        const anchor = pointAt(a.route, t);
         const agent = a.agent ? AGENT_BY_ID.get(a.agent) : null;
 
         return (
@@ -98,6 +135,9 @@ export function Blueprint({ strategy, map, t, focus }: Props) {
               );
             })}
 
+            {(now.x !== anchor.x || now.y !== anchor.y) && (
+              <line x1={anchor.x} y1={anchor.y} x2={now.x} y2={now.y} stroke={color} strokeWidth={2} opacity={0.5} />
+            )}
             <g transform={`translate(${now.x} ${now.y})`} className="bp-pin">
               <circle r={22} fill={color} />
               {agent && (

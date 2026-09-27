@@ -10,6 +10,8 @@ export interface MapGraph {
   nodes: Map<string, Node>;
   adj: Map<string, { to: string; cost: number; choke?: boolean }[]>;
   aliases: Record<string, string>;
+  /** Where each side's routes begin. */
+  spawns: Record<string, string>;
   zones: Record<string, string[]>;
   plantSpots: { site: string; name: string; at: string; safeFrom: string[] }[];
   commonAnchors: string[];
@@ -21,6 +23,7 @@ interface RawGraph {
   map: string;
   extraNodes: Node[];
   aliases: Record<string, string>;
+  spawns: Record<string, string>;
   edges: RawEdge[];
   zones: Record<string, string[]>;
   plantSpots: MapGraph["plantSpots"];
@@ -57,6 +60,7 @@ export function buildGraph(raw: RawGraph, callouts: { name: string; x: number; y
     nodes,
     adj,
     aliases: raw.aliases ?? {},
+    spawns: raw.spawns,
     zones: raw.zones,
     plantSpots: raw.plantSpots,
     commonAnchors: raw.commonAnchors,
