@@ -116,7 +116,7 @@ export function Blueprint({ strategy, map, t, focus }: Props) {
         return (
           <g key={a.slot.id}>
             <path d={d} className="bp-shadow" />
-            <path d={d} stroke={color} className="bp-route" />
+            <path d={d} stroke={color} className="bp-route" opacity={a.agent ? 1 : 0.4} />
             <circle cx={a.polyline[0].x * S} cy={a.polyline[0].y * S} r={7} fill={color} opacity={0.55} />
 
             {(a.slot.util ?? []).map((u, ui) => {
@@ -140,16 +140,25 @@ export function Blueprint({ strategy, map, t, focus }: Props) {
               <line x1={anchor.x} y1={anchor.y} x2={now.x} y2={now.y} stroke={color} strokeWidth={2} opacity={0.5} />
             )}
             <g transform={`translate(${now.x} ${now.y})`} className="bp-pin">
-              <circle r={22} fill={color} />
-              {agent && (
+              {agent ? (
                 <>
+                  <circle r={22} fill={color} />
                   <clipPath id={`clip-${strategy.piece.id}-${i}`}>
                     <circle r={19} />
                   </clipPath>
                   <image href={agent.icon} x={-19} y={-19} width={38} height={38} clipPath={`url(#clip-${strategy.piece.id}-${i})`} />
+                  <circle r={22} fill="none" stroke="#0b0e13" strokeWidth={3} />
+                </>
+              ) : (
+                /* Nobody in the comp can fill this role. Drawn hollow and dashed
+                   so it reads as a deliberate gap, not a failed icon. */
+                <>
+                  <circle r={20} fill="#0b0e13" fillOpacity={0.85} stroke={color} strokeWidth={3} strokeDasharray="6 5" />
+                  <text y={7} textAnchor="middle" fill={color} fontSize={22} fontWeight={700}>
+                    ?
+                  </text>
                 </>
               )}
-              <circle r={22} fill="none" stroke="#0b0e13" strokeWidth={3} />
             </g>
           </g>
         );

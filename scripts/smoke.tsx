@@ -100,6 +100,22 @@ for (const mapId of READY_MAPS) {
     ok(`${mapId}: ${corridorCount / 2} edges have corridors, ${bent / 2} curve around geometry`);
   }
 }
+// A pin with no icon must be the explicit gap marker, never a bare disc that
+// looks like a failed image.
+for (const mapId of READY_MAPS) {
+  for (const side of ["attack", "defense"] as Side[]) {
+    for (const [label, allies, enemies] of COMPS) {
+      const ranked = rankStrategies(graphFor(mapId), piecesFor(mapId), allies, enemies, side, 6);
+      // Only the top strategy's blueprint is on screen, so only its gaps can be drawn.
+      const gaps = ranked[0]?.assignments.filter((a) => !a.agent).length ?? 0;
+      if (!gaps) continue;
+      const html = renderToString(<Deck selection={{ mapId, side, allies, enemies }} onBack={() => {}} />);
+      if (!html.includes("stroke-dasharray=\"6 5\"")) {
+        fail(`${mapId}/${side}/${label}: ${gaps} unfilled slot(s) but no gap marker drawn`);
+      }
+    }
+  }
+}
 if (!errors) ok("routes start at spawn; no agent pin is hidden behind another");
 
 console.log("\n== coverage: every agent usable in every slot-set ==");

@@ -32,8 +32,8 @@ const body = renderToString(
     selection={{
       mapId: "ascent",
       side: "attack",
-      allies: ["jett", "omen", "sova", "killjoy", "kay-o"],
-      enemies: ["viper", "cypher", "raze", "skye", "chamber"],
+      allies: ["cypher", "killjoy", "sage", "chamber", "vyse"],
+      enemies: ["jett", "omen", "sova", "skye", "raze"],
     }}
     onBack={() => {}}
   />,
