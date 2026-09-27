@@ -1,6 +1,6 @@
 import type { SetPiece, Slot, Side, Tag } from "../types";
 import { AGENT_CAPABILITIES } from "../data/agent-capabilities";
-import { expandRoute, type MapGraph, type Node } from "./graph";
+import { expandRoute, expandPolyline, type MapGraph, type Node } from "./graph";
 
 export interface Assignment {
   slot: Slot;
@@ -8,7 +8,10 @@ export interface Assignment {
   score: number;
   /** Set when the comp has nobody who supplies what the slot asked for. */
   gap?: string;
+  /** Named callouts, for the written route on the card. */
   route: Node[];
+  /** Corridor-following shape, for drawing on the map. */
+  polyline: { x: number; y: number }[];
 }
 
 export interface RankedStrategy {
@@ -113,7 +116,8 @@ function enemyTags(enemy: string[]): Set<Tag> {
 function routeFrom(graph: MapGraph, side: Side, waypoints: string[]) {
   const spawn = graph.spawns[side];
   const full = spawn && waypoints[0] !== spawn ? [spawn, ...waypoints] : waypoints;
-  return expandRoute(graph, full);
+  const route = expandRoute(graph, full);
+  return { route, polyline: expandPolyline(graph, route.map((n) => n.name)) };
 }
 
 export function rankStrategies(
@@ -148,13 +152,13 @@ export function rankStrategies(
         if (!agent) {
           const gap = `No agent in your comp provides ${slot.needs.join(" or ")} - ${slot.label} is unfilled.`;
           warnings.push(gap);
-          return { slot, agent: null, score: 0, gap, route: routeFrom(graph, side, slot.waypoints) };
+          return { slot, agent: null, score: 0, gap, ...routeFrom(graph, side, slot.waypoints) };
         }
         return {
           slot,
           agent,
           score: scoreAgent(agent, slot),
-          route: routeFrom(graph, side, slot.waypoints),
+          ...routeFrom(graph, side, slot.waypoints),
         };
       });
 

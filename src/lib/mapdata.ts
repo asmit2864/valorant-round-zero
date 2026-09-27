@@ -1,6 +1,7 @@
 import mapsJson from "../data/maps.generated.json";
 import agentsJson from "../data/agents.generated.json";
 import ascentGraph from "../data/graphs/ascent.json";
+import ascentRoutes from "../data/routes/ascent.json";
 import { ASCENT_SET_PIECES } from "../data/setpieces/ascent";
 import { buildGraph, type MapGraph } from "./graph";
 import type { SetPiece } from "../types";
@@ -30,8 +31,8 @@ export const AGENT_BY_ID = new Map(AGENTS.map((a) => [a.id, a]));
 export const MAP_BY_ID = new Map(MAPS.map((m) => [m.id, m]));
 
 /** Maps with a graph + set pieces authored. The rest are shown as coming soon. */
-const CONTENT: Record<string, { raw: unknown; pieces: SetPiece[] }> = {
-  ascent: { raw: ascentGraph, pieces: ASCENT_SET_PIECES },
+const CONTENT: Record<string, { raw: unknown; routes: unknown; pieces: SetPiece[] }> = {
+  ascent: { raw: ascentGraph, routes: ascentRoutes, pieces: ASCENT_SET_PIECES },
 };
 
 export const READY_MAPS = Object.keys(CONTENT);
@@ -44,7 +45,7 @@ export function graphFor(mapId: string): MapGraph {
   if (!g) {
     const entry = CONTENT[mapId];
     if (!entry) throw new Error(`no content for map: ${mapId}`);
-    g = buildGraph(entry.raw as never, MAP_BY_ID.get(mapId)!.callouts);
+    g = buildGraph(entry.raw as never, MAP_BY_ID.get(mapId)!.callouts, entry.routes as never);
     graphCache.set(mapId, g);
   }
   return g;

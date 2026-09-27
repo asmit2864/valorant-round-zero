@@ -5,7 +5,8 @@
   "type": "module",
   "description": "Offline-first Valorant strategy blueprints. Pick map + 10 agents, get animated pro-style strats. Zero runtime AI.",
   "scripts": {
-    "data": "node scripts/fetch-game-data.mjs && tsx scripts/fetch-assets.ts",
+    "data": "node scripts/fetch-game-data.mjs && tsx scripts/fetch-assets.ts && tsx scripts/build-routes.ts",
+    "routes": "tsx scripts/build-routes.ts",
     "validate": "tsx scripts/validate.ts",
     "preview:strat": "tsx scripts/render-demo.ts",
     "dev": "vite",

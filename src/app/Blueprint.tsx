@@ -1,13 +1,14 @@
 import { useMemo } from "react";
 import type { RankedStrategy } from "../lib/matcher";
-import type { Node } from "../lib/graph";
 import { AGENT_BY_ID, type MapRecord } from "../lib/mapdata";
 
 export const LANE = ["#ff4655", "#00e0c6", "#ffb648", "#8b7bff", "#4ade80"];
 const S = 1000;
 
+type Pt = { x: number; y: number };
+
 /** Catmull-Rom, so routes read as drawn lines rather than polygons. */
-function smooth(nodes: Node[]): string {
+function smooth(nodes: Pt[]): string {
   const p = nodes.map((n) => ({ x: n.x * S, y: n.y * S }));
   if (p.length < 2) return "";
   if (p.length === 2) return `M${p[0].x},${p[0].y} L${p[1].x},${p[1].y}`;
@@ -21,7 +22,7 @@ function smooth(nodes: Node[]): string {
 }
 
 /** Position along a route at normalized progress t, by cumulative segment length. */
-function pointAt(nodes: Node[], t: number): { x: number; y: number } {
+function pointAt(nodes: Pt[], t: number): Pt {
   if (!nodes.length) return { x: 0, y: 0 };
   if (nodes.length === 1) return { x: nodes[0].x * S, y: nodes[0].y * S };
   const pts = nodes.map((n) => ({ x: n.x * S, y: n.y * S }));
@@ -94,7 +95,7 @@ export function Blueprint({ strategy, map, t, focus }: Props) {
   // Positions are resolved for the whole team before drawing, because whether a
   // pin needs nudging depends on where the other four are.
   const pins = useMemo(
-    () => decollide(strategy.assignments.map((a) => (a.route.length ? pointAt(a.route, t) : null))),
+    () => decollide(strategy.assignments.map((a) => (a.polyline.length ? pointAt(a.polyline, t) : null))),
     [strategy, t],
   );
 
@@ -105,18 +106,18 @@ export function Blueprint({ strategy, map, t, focus }: Props) {
 
       {strategy.assignments.map((a, i) => {
         if (focus !== null && focus !== i) return null;
-        if (!a.route.length) return null;
+        if (!a.polyline.length) return null;
         const color = LANE[i % LANE.length];
-        const d = smooth(a.route);
-        const now = pins[i] ?? pointAt(a.route, t);
-        const anchor = pointAt(a.route, t);
+        const d = smooth(a.polyline);
+        const now = pins[i] ?? pointAt(a.polyline, t);
+        const anchor = pointAt(a.polyline, t);
         const agent = a.agent ? AGENT_BY_ID.get(a.agent) : null;
 
         return (
           <g key={a.slot.id}>
             <path d={d} className="bp-shadow" />
             <path d={d} stroke={color} className="bp-route" />
-            <circle cx={a.route[0].x * S} cy={a.route[0].y * S} r={7} fill={color} opacity={0.55} />
+            <circle cx={a.polyline[0].x * S} cy={a.polyline[0].y * S} r={7} fill={color} opacity={0.55} />
 
             {(a.slot.util ?? []).map((u, ui) => {
               const start = phaseStart.get(u.phase) ?? 0;

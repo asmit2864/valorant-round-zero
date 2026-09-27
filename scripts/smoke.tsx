@@ -89,6 +89,17 @@ for (const mapId of READY_MAPS) {
     }
   }
 }
+// Corridors must actually be loaded, or every path silently reverts to
+// straight lines through walls.
+for (const mapId of READY_MAPS) {
+  const g = graphFor(mapId);
+  const corridorCount = Object.keys(g.corridors).length;
+  if (!corridorCount) fail(`${mapId}: no corridors loaded, paths would cut through walls`);
+  else {
+    const bent = Object.values(g.corridors).filter((c) => c.length > 2).length;
+    ok(`${mapId}: ${corridorCount / 2} edges have corridors, ${bent / 2} curve around geometry`);
+  }
+}
 if (!errors) ok("routes start at spawn; no agent pin is hidden behind another");
 
 console.log("\n== coverage: every agent usable in every slot-set ==");

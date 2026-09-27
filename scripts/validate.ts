@@ -13,7 +13,8 @@ const maps = read("../src/data/maps.generated.json");
 const rawGraph = read("../src/data/graphs/ascent.json");
 
 const ascent = maps.find((m: any) => m.id === "ascent");
-const g = buildGraph(rawGraph, ascent.callouts);
+const routes = read("../src/data/routes/ascent.json");
+const g = buildGraph(rawGraph, ascent.callouts, routes);
 
 let errors = 0;
 const fail = (msg: string) => {

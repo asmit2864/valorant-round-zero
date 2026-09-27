@@ -12,6 +12,8 @@ export interface MapGraph {
   aliases: Record<string, string>;
   /** Where each side's routes begin. */
   spawns: Record<string, string>;
+  /** Precomputed corridor shape per edge, keyed "A|B". See scripts/build-routes.ts. */
+  corridors: Record<string, [number, number][]>;
   zones: Record<string, string[]>;
   plantSpots: { site: string; name: string; at: string; safeFrom: string[] }[];
   commonAnchors: string[];
@@ -33,7 +35,11 @@ interface RawGraph {
 const dist = (a: Node, b: Node) => Math.hypot(a.x - b.x, a.y - b.y);
 
 /** `callouts` comes from maps.generated.json; passed in so this stays bundler-agnostic. */
-export function buildGraph(raw: RawGraph, callouts: { name: string; x: number; y: number }[]): MapGraph {
+export function buildGraph(
+  raw: RawGraph,
+  callouts: { name: string; x: number; y: number }[],
+  corridors: Record<string, [number, number][]> = {},
+): MapGraph {
   const nodes = new Map<string, Node>();
   for (const c of callouts) nodes.set(c.name, { name: c.name, x: c.x, y: c.y });
   for (const n of raw.extraNodes) nodes.set(n.name, n);
@@ -61,6 +67,7 @@ export function buildGraph(raw: RawGraph, callouts: { name: string; x: number; y
     adj,
     aliases: raw.aliases ?? {},
     spawns: raw.spawns,
+    corridors,
     zones: raw.zones,
     plantSpots: raw.plantSpots,
     commonAnchors: raw.commonAnchors,
@@ -116,6 +123,41 @@ export function findPath(g: MapGraph, fromName: string, toName: string): string[
     }
   }
   throw new Error(`no path on ${g.map}: ${fromName} -> ${toName}`);
+}
+
+/**
+ * The drawn shape of a route.
+ *
+ * A straight line between two callouts cuts through walls, so each edge carries
+ * a precomputed polyline that follows the actual corridor. Falls back to the
+ * straight segment only if an edge has no stored corridor.
+ */
+export function expandPolyline(g: MapGraph, nodeNames: string[]): { x: number; y: number }[] {
+  const pts: { x: number; y: number }[] = [];
+  const push = (p: { x: number; y: number }) => {
+    const last = pts[pts.length - 1];
+    if (!last || last.x !== p.x || last.y !== p.y) pts.push(p);
+  };
+
+  if (nodeNames.length === 1) {
+    const n = g.nodes.get(nodeNames[0])!;
+    return [{ x: n.x, y: n.y }];
+  }
+
+  for (let i = 0; i < nodeNames.length - 1; i++) {
+    const a = nodeNames[i];
+    const b = nodeNames[i + 1];
+    const corridor = g.corridors[`${a}|${b}`];
+    if (corridor) {
+      for (const [x, y] of corridor) push({ x, y });
+    } else {
+      const na = g.nodes.get(a)!;
+      const nb = g.nodes.get(b)!;
+      push({ x: na.x, y: na.y });
+      push({ x: nb.x, y: nb.y });
+    }
+  }
+  return pts;
 }
 
 /** Expand a set piece's waypoint list into a continuous, wall-legal route. */
